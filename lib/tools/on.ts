@@ -1,17 +1,23 @@
 import type { Listener, ListenerOptions, Register, Unregister } from "../types";
 
 /**
+ * Returns a function that registers a `listener` with optional `options` for a given `event` on the provided `target`.
+ *
+ * @param target The target on which to listen for the event.
+ * @param event The event name to listen for.
+ * @returns Function that registers a `listener` with optional `options`.
+ */
+function on(target: EventTarget, event: string): Register;
+/**
  * Listens for `event` on `target`, calling `listener(event)` at each incoming `event`. The provided `options` are identical to those provided to `addEventListener`.
  * Returns a function that removes the `listener` from the `target` for the specified `event`.
- * If `listener` is not defined, returns a function that accepts the remaining `(listener, options)` arguments.
  *
  * @param target The target on which to listen for the event.
  * @param event The event name to listen for.
  * @param listener The listener callback.
  * @param options Options to pass to the listener.
- * @returns A function that removes the `listener` or a function that registers a `listener`.
+ * @returns A function that removes the `listener`.
  */
-function on(target: EventTarget, event: string): Register;
 function on(
   target: EventTarget,
   event: string,

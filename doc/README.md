@@ -28,7 +28,7 @@ futurise
 
 #### Defined in
 
-[types.ts:1](https://github.com/nevoland/futurise/blob/32382ef/lib/types.ts#L1)
+[types.ts:1](https://github.com/nevoland/futurise/blob/64dc922/lib/types.ts#L1)
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 #### Defined in
 
-[types.ts:3](https://github.com/nevoland/futurise/blob/32382ef/lib/types.ts#L3)
+[types.ts:3](https://github.com/nevoland/futurise/blob/64dc922/lib/types.ts#L3)
 
 ___
 
@@ -63,7 +63,7 @@ ___
 
 #### Defined in
 
-[types.ts:7](https://github.com/nevoland/futurise/blob/32382ef/lib/types.ts#L7)
+[types.ts:7](https://github.com/nevoland/futurise/blob/64dc922/lib/types.ts#L7)
 
 ___
 
@@ -81,7 +81,7 @@ ___
 
 #### Defined in
 
-[types.ts:5](https://github.com/nevoland/futurise/blob/32382ef/lib/types.ts#L5)
+[types.ts:5](https://github.com/nevoland/futurise/blob/64dc922/lib/types.ts#L5)
 
 ## Functions
 
@@ -106,7 +106,7 @@ Function that cancels the interval.
 
 #### Defined in
 
-tools/interval.ts:19
+[tools/interval.ts:19](https://github.com/nevoland/futurise/blob/64dc922/lib/tools/interval.ts#L19)
 
 ___
 
@@ -114,9 +114,7 @@ ___
 
 ▸ **on**(`target`, `event`): [`Register`](README.md#register)
 
-Listens for `event` on `target`, calling `listener(event)` at each incoming `event`. The provided `options` are identical to those provided to `addEventListener`.
-Returns a function that removes the `listener` from the `target` for the specified `event`.
-If `listener` is not defined, returns a function that accepts the remaining `(listener, options)` arguments.
+Returns a function that registers a `listener` with optional `options` for a given `event` on the provided `target`.
 
 #### Parameters
 
@@ -129,30 +127,35 @@ If `listener` is not defined, returns a function that accepts the remaining `(li
 
 [`Register`](README.md#register)
 
-A function that removes the `listener` or a function that registers a `listener`.
+Function that registers a `listener` with optional `options`.
 
 #### Defined in
 
-tools/on.ts:14
+[tools/on.ts:10](https://github.com/nevoland/futurise/blob/64dc922/lib/tools/on.ts#L10)
 
 ▸ **on**(`target`, `event`, `listener`, `options`): [`Unregister`](README.md#unregister)
 
+Listens for `event` on `target`, calling `listener(event)` at each incoming `event`. The provided `options` are identical to those provided to `addEventListener`.
+Returns a function that removes the `listener` from the `target` for the specified `event`.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `target` | `EventTarget` |
-| `event` | `string` |
-| `listener` | ``null`` \| `EventListenerOrEventListenerObject` |
-| `options` | `undefined` \| `boolean` \| `AddEventListenerOptions` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `target` | `EventTarget` | The target on which to listen for the event. |
+| `event` | `string` | The event name to listen for. |
+| `listener` | ``null`` \| `EventListenerOrEventListenerObject` | The listener callback. |
+| `options` | `undefined` \| `boolean` \| `AddEventListenerOptions` | Options to pass to the listener. |
 
 #### Returns
 
 [`Unregister`](README.md#unregister)
 
+A function that removes the `listener`.
+
 #### Defined in
 
-tools/on.ts:15
+[tools/on.ts:21](https://github.com/nevoland/futurise/blob/64dc922/lib/tools/on.ts#L21)
 
 ___
 
@@ -176,7 +179,7 @@ If a `signal` is provided, listens for an `abort` event to reject the promise wi
 
 #### Defined in
 
-tools/sleep.ts:13
+[tools/sleep.ts:13](https://github.com/nevoland/futurise/blob/64dc922/lib/tools/sleep.ts#L13)
 
 ___
 
@@ -201,7 +204,7 @@ Function that cancels the call of `callback`.
 
 #### Defined in
 
-tools/timeout.ts:15
+[tools/timeout.ts:15](https://github.com/nevoland/futurise/blob/64dc922/lib/tools/timeout.ts#L15)
 
 ___
 
@@ -228,7 +231,7 @@ A promise that resolves to the `event`.
 
 #### Defined in
 
-tools/until.ts:12
+[tools/until.ts:12](https://github.com/nevoland/futurise/blob/64dc922/lib/tools/until.ts#L12)
 
 ___
 
@@ -254,4 +257,4 @@ If a `signal` is provided, listens to it to cancel the promise.
 
 #### Defined in
 
-tools/untilOnline.ts:14
+[tools/untilOnline.ts:14](https://github.com/nevoland/futurise/blob/64dc922/lib/tools/untilOnline.ts#L14)
