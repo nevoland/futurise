@@ -3,6 +3,15 @@ import type { Listener, ListenerOptions, Register, Unregister } from "../types";
 /**
  * Returns a function that registers a `listener` with optional `options` for a given `event` on the provided `target`.
  *
+ * @example
+ * ```typescript
+ * const register = on(element, "click");
+ * // Start listening
+ * const off = register(callback);
+ * // Stop listening
+ * off();
+ * ```
+ *
  * @param target The target on which to listen for the event.
  * @param event The event name to listen for.
  * @returns Function that registers a `listener` with optional `options`.
