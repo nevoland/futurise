@@ -1,44 +1,26 @@
-# Foundation
+# Futurise
 
-🏛️ Base repository for building JavaScript apps or libraries.
-
-<!-- Delete start -->
-
-> To use this template, clone this repository and rename all "Foundation" instances to the name of your library.
-> Set this package to "public" before publishing it.
-
-### Uses
-
-- [Vite](https://vitejs.dev)
-- [Vitest](https://vitest.dev)
-- [TypeScript](https://www.typescriptlang.org)
-- [Prettier](https://prettier.io)
-- [Eslint](https://eslint.org)
-- [Tailwind](https://tailwindcss.com)
-- [Typedoc](https://typedoc.org)
-- [NVM](https://github.com/nvm-sh/nvm)
-
-<!-- Delete end -->
+🔮 Promise and asynchronous helper functions.
 
 ### Features
 
-- List the main features of the library
-- Explain how it distinguishes from other libraries
+- Event listener utilities that provide unregister functions
+- Promise generators that wait for event occurrences
 
 ## Usage
 
 Everything is exported from the main entry-point through an ES6 module:
 
 ```js
-import { add } from "foundation";
+import { sleep, on } from "futurise";
 ```
 
 ## Installation
 
-Install with the [Node Package Manager](https://www.npmjs.com/package/foundation):
+Install with the [Node Package Manager](https://www.npmjs.com/package/futurise):
 
 ```bash
-npm install foundation
+npm install futurise
 ```
 
 ## Documentation
