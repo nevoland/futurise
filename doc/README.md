@@ -16,6 +16,7 @@ futurise
 
 - [interval](README.md#interval)
 - [on](README.md#on)
+- [reduceStatusList](README.md#reducestatuslist)
 - [sleep](README.md#sleep)
 - [timeout](README.md#timeout)
 - [until](README.md#until)
@@ -29,7 +30,7 @@ futurise
 
 #### Defined in
 
-[types.ts:1](https://github.com/nevoland/futurise/blob/1730f11/lib/types.ts#L1)
+[types.ts:1](https://github.com/nevoland/futurise/blob/d7e3946/lib/types.ts#L1)
 
 ___
 
@@ -39,7 +40,7 @@ ___
 
 #### Defined in
 
-[types.ts:3](https://github.com/nevoland/futurise/blob/1730f11/lib/types.ts#L3)
+[types.ts:3](https://github.com/nevoland/futurise/blob/d7e3946/lib/types.ts#L3)
 
 ___
 
@@ -51,7 +52,7 @@ Status of a promise.
 
 #### Defined in
 
-[types.ts:15](https://github.com/nevoland/futurise/blob/1730f11/lib/types.ts#L15)
+[types.ts:15](https://github.com/nevoland/futurise/blob/d7e3946/lib/types.ts#L15)
 
 ___
 
@@ -76,7 +77,7 @@ ___
 
 #### Defined in
 
-[types.ts:7](https://github.com/nevoland/futurise/blob/1730f11/lib/types.ts#L7)
+[types.ts:7](https://github.com/nevoland/futurise/blob/d7e3946/lib/types.ts#L7)
 
 ___
 
@@ -94,7 +95,7 @@ ___
 
 #### Defined in
 
-[types.ts:5](https://github.com/nevoland/futurise/blob/1730f11/lib/types.ts#L5)
+[types.ts:5](https://github.com/nevoland/futurise/blob/d7e3946/lib/types.ts#L5)
 
 ## Functions
 
@@ -119,7 +120,7 @@ Function that cancels the interval.
 
 #### Defined in
 
-[tools/interval.ts:19](https://github.com/nevoland/futurise/blob/1730f11/lib/tools/interval.ts#L19)
+[tools/interval.ts:19](https://github.com/nevoland/futurise/blob/d7e3946/lib/tools/interval.ts#L19)
 
 ___
 
@@ -154,7 +155,7 @@ off();
 
 #### Defined in
 
-[tools/on.ts:19](https://github.com/nevoland/futurise/blob/1730f11/lib/tools/on.ts#L19)
+[tools/on.ts:19](https://github.com/nevoland/futurise/blob/d7e3946/lib/tools/on.ts#L19)
 
 ▸ **on**(`target`, `event`, `listener`, `options`): [`Unregister`](README.md#unregister)
 
@@ -178,7 +179,31 @@ A function that removes the `listener`.
 
 #### Defined in
 
-[tools/on.ts:30](https://github.com/nevoland/futurise/blob/1730f11/lib/tools/on.ts#L30)
+[tools/on.ts:30](https://github.com/nevoland/futurise/blob/d7e3946/lib/tools/on.ts#L30)
+
+___
+
+### reduceStatusList
+
+▸ **reduceStatusList**(`...statusList`): [`PromiseStatus`](README.md#promisestatus)
+
+Returns a reduced promise status, prioritizing `"rejected"` over `"pending"` over `"idle"` over `"fulfilled"`.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `...statusList` | [`PromiseStatus`](README.md#promisestatus)[] | List of promise statuses. |
+
+#### Returns
+
+[`PromiseStatus`](README.md#promisestatus)
+
+The reduced promise status.
+
+#### Defined in
+
+[tools/reduceStatusList.ts:9](https://github.com/nevoland/futurise/blob/d7e3946/lib/tools/reduceStatusList.ts#L9)
 
 ___
 
@@ -202,7 +227,7 @@ If a `signal` is provided, listens for an `abort` event to reject the promise wi
 
 #### Defined in
 
-[tools/sleep.ts:13](https://github.com/nevoland/futurise/blob/1730f11/lib/tools/sleep.ts#L13)
+[tools/sleep.ts:13](https://github.com/nevoland/futurise/blob/d7e3946/lib/tools/sleep.ts#L13)
 
 ___
 
@@ -227,7 +252,7 @@ Function that cancels the call of `callback`.
 
 #### Defined in
 
-[tools/timeout.ts:15](https://github.com/nevoland/futurise/blob/1730f11/lib/tools/timeout.ts#L15)
+[tools/timeout.ts:15](https://github.com/nevoland/futurise/blob/d7e3946/lib/tools/timeout.ts#L15)
 
 ___
 
@@ -254,7 +279,7 @@ A promise that resolves to the `event`.
 
 #### Defined in
 
-[tools/until.ts:12](https://github.com/nevoland/futurise/blob/1730f11/lib/tools/until.ts#L12)
+[tools/until.ts:12](https://github.com/nevoland/futurise/blob/d7e3946/lib/tools/until.ts#L12)
 
 ___
 
@@ -280,4 +305,4 @@ If a `signal` is provided, listens to it to cancel the promise.
 
 #### Defined in
 
-[tools/untilOnline.ts:14](https://github.com/nevoland/futurise/blob/1730f11/lib/tools/untilOnline.ts#L14)
+[tools/untilOnline.ts:14](https://github.com/nevoland/futurise/blob/d7e3946/lib/tools/untilOnline.ts#L14)
