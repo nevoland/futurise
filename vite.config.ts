@@ -7,14 +7,14 @@ import preact from "@preact/preset-vite";
 export default defineConfig({
   plugins: [
     moduleList({
-      mode: "named-static-no-extension",
-      rootPath: resolve("lib/tools"),
+      mode: { extension: "js", language: "ts" },
       outputPath: resolve("lib/tools.ts"),
+      rootPath: resolve("lib/tools"),
     }),
     moduleList({
-      mode: "named-static-no-extension",
-      rootPath: resolve("src/components"),
+      mode: { extension: "js", language: "ts" },
       outputPath: resolve("src/components.ts"),
+      rootPath: resolve("src/components"),
     }),
     preact(),
   ],
