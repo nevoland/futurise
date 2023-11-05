@@ -1,7 +1,12 @@
-import { getGlobal } from "../dependencies";
+import { getGlobal } from "../dependencies.js";
 import type { Unregister } from "../types";
 
-const { setTimeout, clearTimeout } = getGlobal();
+const {
+  setTimeout,
+  clearTimeout,
+  requestAnimationFrame,
+  cancelAnimationFrame,
+} = getGlobal();
 
 const MAX_TIMEOUT = 2147483647;
 

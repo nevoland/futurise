@@ -1,5 +1,5 @@
-import { MAX_TIMEOUT } from "../constants/MAX_TIMEOUT";
-import { getGlobal } from "../dependencies";
+import { MAX_TIMEOUT } from "../constants/MAX_TIMEOUT.js";
+import { getGlobal } from "../dependencies.js";
 import type { Unregister } from "../types";
 
 const {

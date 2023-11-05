@@ -1,6 +1,10 @@
 import { expect, test } from "vitest";
 
+import { getGlobal } from "../dependencies.js";
+
 import { sleep } from "./sleep.js";
+
+const { setTimeout, AbortSignal } = getGlobal();
 
 test("sleep for given duration", async () => {
   const DURATION = 100;

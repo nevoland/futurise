@@ -16,7 +16,14 @@ export default [
     languageOptions: {
       globals: {
         ...((keyList) => Object.fromEntries(keyList.map((key) => [key, true])))(
-          ["process", "console"],
+          [
+            "process",
+            "console",
+            "AbortController",
+            "AbortSignal",
+            "Event",
+            "EventTarget",
+          ],
         ),
       },
       parser,
@@ -61,17 +68,18 @@ export default [
         "error",
         {
           exceptions: [
+            "_",
             "a",
             "b",
+            "fs",
+            "i",
+            "id",
+            "io",
+            "j",
+            "on",
+            "to",
             "x",
             "y",
-            "i",
-            "j",
-            "_",
-            "io",
-            "id",
-            "fs",
-            "to",
           ],
           min: 3,
           properties: "never",

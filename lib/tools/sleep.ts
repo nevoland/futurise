@@ -1,4 +1,4 @@
-import { getGlobal } from "../dependencies";
+import { getGlobal } from "../dependencies.js";
 
 const { setTimeout, clearTimeout } = getGlobal();
 

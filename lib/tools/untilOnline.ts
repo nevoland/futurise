@@ -1,7 +1,7 @@
-import { getGlobal } from "../dependencies";
+import { getGlobal } from "../dependencies.js";
 
-import { on } from "./on";
-import { until } from "./until";
+import { on } from "./on.js";
+import { until } from "./until.js";
 
 /**
  * Returns a promise that waits for the browser to be back online.
