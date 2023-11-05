@@ -72,6 +72,6 @@
     "vitest": "^0.34.6"
   },
   "dependencies": {
-    "@davidbonnet/get-global": "^2.0.0"
+    "@davidbonnet/get-global": "^2.0.1"
   }
 }
