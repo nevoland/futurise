@@ -1,6 +1,6 @@
 import { expect, test } from "vitest";
 
-import { sleep } from "./sleep";
+import { sleep } from "./sleep.js";
 
 test("sleep for given duration", async () => {
   const DURATION = 100;
