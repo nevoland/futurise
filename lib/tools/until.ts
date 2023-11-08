@@ -1,4 +1,4 @@
-import type { Register } from "../types";
+import type { Listener, Register } from "../types";
 
 /**
  * Listens for an event with the provided `register` function until it happens or until `sentinel(event)` returns a truthy value.
@@ -10,7 +10,7 @@ import type { Register } from "../types";
  * @returns A promise that resolves to the `event`.
  */
 export function until(
-  register: Register,
+  register: Register<Listener<Event>, any>,
   signal?: AbortSignal,
   sentinel?: (event: Event) => boolean,
 ): Promise<Event> {

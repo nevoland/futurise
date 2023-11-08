@@ -23,6 +23,7 @@ export default [
             "AbortSignal",
             "Event",
             "EventTarget",
+            "HTMLElementEventMap",
           ],
         ),
       },
