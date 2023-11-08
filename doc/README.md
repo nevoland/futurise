@@ -16,6 +16,7 @@ futurise
 
 - [interval](README.md#interval)
 - [on](README.md#on)
+- [once](README.md#once)
 - [reduceStatusList](README.md#reducestatuslist)
 - [sleep](README.md#sleep)
 - [timeout](README.md#timeout)
@@ -50,7 +51,7 @@ futurise
 
 #### Defined in
 
-[types.ts:1](https://github.com/nevoland/futurise/blob/86be09b/lib/types.ts#L1)
+[types.ts:1](https://github.com/nevoland/futurise/blob/2d7cb19/lib/types.ts#L1)
 
 ___
 
@@ -60,7 +61,7 @@ ___
 
 #### Defined in
 
-[types.ts:3](https://github.com/nevoland/futurise/blob/86be09b/lib/types.ts#L3)
+[types.ts:3](https://github.com/nevoland/futurise/blob/2d7cb19/lib/types.ts#L3)
 
 ___
 
@@ -72,7 +73,7 @@ Status of a promise.
 
 #### Defined in
 
-[types.ts:12](https://github.com/nevoland/futurise/blob/86be09b/lib/types.ts#L12)
+[types.ts:12](https://github.com/nevoland/futurise/blob/2d7cb19/lib/types.ts#L12)
 
 ___
 
@@ -104,7 +105,7 @@ ___
 
 #### Defined in
 
-[types.ts:7](https://github.com/nevoland/futurise/blob/86be09b/lib/types.ts#L7)
+[types.ts:7](https://github.com/nevoland/futurise/blob/2d7cb19/lib/types.ts#L7)
 
 ___
 
@@ -122,7 +123,7 @@ ___
 
 #### Defined in
 
-[types.ts:5](https://github.com/nevoland/futurise/blob/86be09b/lib/types.ts#L5)
+[types.ts:5](https://github.com/nevoland/futurise/blob/2d7cb19/lib/types.ts#L5)
 
 ## Functions
 
@@ -147,7 +148,7 @@ Function that cancels the interval.
 
 #### Defined in
 
-[tools/interval.ts:19](https://github.com/nevoland/futurise/blob/86be09b/lib/tools/interval.ts#L19)
+[tools/interval.ts:19](https://github.com/nevoland/futurise/blob/2d7cb19/lib/tools/interval.ts#L19)
 
 ___
 
@@ -181,7 +182,7 @@ A function that removes the `listener`.
 
 #### Defined in
 
-[tools/on.ts:15](https://github.com/nevoland/futurise/blob/86be09b/lib/tools/on.ts#L15)
+[tools/on.ts:13](https://github.com/nevoland/futurise/blob/2d7cb19/lib/tools/on.ts#L13)
 
 ▸ **on**<`K`\>(`target`, `eventName`, `listener`, `options?`): [`Unregister`](README.md#unregister)
 
@@ -206,7 +207,7 @@ A function that removes the `listener`.
 
 #### Defined in
 
-[tools/on.ts:21](https://github.com/nevoland/futurise/blob/86be09b/lib/tools/on.ts#L21)
+[tools/on.ts:19](https://github.com/nevoland/futurise/blob/2d7cb19/lib/tools/on.ts#L19)
 
 ▸ **on**(`target`, `eventName`, `listener`, `options?`): [`Unregister`](README.md#unregister)
 
@@ -225,7 +226,7 @@ A function that removes the `listener`.
 
 #### Defined in
 
-[tools/on.ts:27](https://github.com/nevoland/futurise/blob/86be09b/lib/tools/on.ts#L27)
+[tools/on.ts:25](https://github.com/nevoland/futurise/blob/2d7cb19/lib/tools/on.ts#L25)
 
 ▸ **on**<`K`\>(`target`, `eventName`): [`Register`](README.md#register)<[`Listener`](README.md#listener)<`HTMLElementEventMap`[`K`]\>, [`ListenerOptions`](README.md#listeneroptions)\>
 
@@ -262,7 +263,7 @@ off();
 
 #### Defined in
 
-[tools/on.ts:49](https://github.com/nevoland/futurise/blob/86be09b/lib/tools/on.ts#L49)
+[tools/on.ts:47](https://github.com/nevoland/futurise/blob/2d7cb19/lib/tools/on.ts#L47)
 
 ▸ **on**<`K`\>(`target`, `eventName`): [`Register`](README.md#register)<[`Listener`](README.md#listener)<`DocumentEventMap`[`K`]\>, [`ListenerOptions`](README.md#listeneroptions)\>
 
@@ -285,7 +286,7 @@ off();
 
 #### Defined in
 
-[tools/on.ts:53](https://github.com/nevoland/futurise/blob/86be09b/lib/tools/on.ts#L53)
+[tools/on.ts:51](https://github.com/nevoland/futurise/blob/2d7cb19/lib/tools/on.ts#L51)
 
 ▸ **on**(`target`, `eventName`): [`Register`](README.md#register)<[`Listener`](README.md#listener)<`Event`\>, [`ListenerOptions`](README.md#listeneroptions)\>
 
@@ -302,7 +303,162 @@ off();
 
 #### Defined in
 
-[tools/on.ts:57](https://github.com/nevoland/futurise/blob/86be09b/lib/tools/on.ts#L57)
+[tools/on.ts:55](https://github.com/nevoland/futurise/blob/2d7cb19/lib/tools/on.ts#L55)
+
+___
+
+### once
+
+▸ **once**<`K`\>(`target`, `eventName`, `listener`, `options?`): [`Unregister`](README.md#unregister)
+
+Listens for `event` on `target`, calling `listener(event)` at the first occuring `event`. The `listener` is then unregistered upon the first occurence. The provided `options` are identical to those provided to `addEventListener`.
+Returns a function that removes the `listener` from the `target` for the specified `event`.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `K` | extends keyof `HTMLElementEventMap` |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `target` | `HTMLElement` | The target on which to listen for the event. |
+| `eventName` | `K` | - |
+| `listener` | [`Listener`](README.md#listener)<`HTMLElementEventMap`[`K`]\> | The listener callback. |
+| `options?` | `boolean` \| `AddEventListenerOptions` | Options to pass to the listener. |
+
+#### Returns
+
+[`Unregister`](README.md#unregister)
+
+A function that removes the `listener`.
+
+#### Defined in
+
+[tools/once.ts:13](https://github.com/nevoland/futurise/blob/2d7cb19/lib/tools/once.ts#L13)
+
+▸ **once**<`K`\>(`target`, `eventName`, `listener`, `options?`): [`Unregister`](README.md#unregister)
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `K` | extends keyof `DocumentEventMap` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `target` | `Document` |
+| `eventName` | `K` |
+| `listener` | [`Listener`](README.md#listener)<`DocumentEventMap`[`K`]\> |
+| `options?` | `boolean` \| `AddEventListenerOptions` |
+
+#### Returns
+
+[`Unregister`](README.md#unregister)
+
+#### Defined in
+
+[tools/once.ts:19](https://github.com/nevoland/futurise/blob/2d7cb19/lib/tools/once.ts#L19)
+
+▸ **once**(`target`, `eventName`, `listener`, `options?`): [`Unregister`](README.md#unregister)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `target` | `EventTarget` |
+| `eventName` | `string` |
+| `listener` | [`Listener`](README.md#listener)<`Event`\> |
+| `options?` | `boolean` \| `AddEventListenerOptions` |
+
+#### Returns
+
+[`Unregister`](README.md#unregister)
+
+#### Defined in
+
+[tools/once.ts:25](https://github.com/nevoland/futurise/blob/2d7cb19/lib/tools/once.ts#L25)
+
+▸ **once**<`K`\>(`target`, `eventName`): [`Register`](README.md#register)<[`Listener`](README.md#listener)<`HTMLElementEventMap`[`K`]\>, [`ListenerOptions`](README.md#listeneroptions)\>
+
+Returns a function that registers a `listener` with optional `options` for a given `event` on the provided `target`. The `listener` is then unregistered upon the first occurence of the `event`.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `K` | extends keyof `HTMLElementEventMap` |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `target` | `HTMLElement` | The target on which to listen for the event. |
+| `eventName` | `K` | - |
+
+#### Returns
+
+[`Register`](README.md#register)<[`Listener`](README.md#listener)<`HTMLElementEventMap`[`K`]\>, [`ListenerOptions`](README.md#listeneroptions)\>
+
+Function that registers a `listener` with optional `options`.
+
+**`Example`**
+
+```typescript
+const register = on(element, "click");
+// Start listening
+const off = register(callback);
+// Stop listening
+off();
+```
+
+#### Defined in
+
+[tools/once.ts:47](https://github.com/nevoland/futurise/blob/2d7cb19/lib/tools/once.ts#L47)
+
+▸ **once**<`K`\>(`target`, `eventName`): [`Register`](README.md#register)<[`Listener`](README.md#listener)<`DocumentEventMap`[`K`]\>, [`ListenerOptions`](README.md#listeneroptions)\>
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `K` | extends keyof `DocumentEventMap` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `target` | `Document` |
+| `eventName` | `K` |
+
+#### Returns
+
+[`Register`](README.md#register)<[`Listener`](README.md#listener)<`DocumentEventMap`[`K`]\>, [`ListenerOptions`](README.md#listeneroptions)\>
+
+#### Defined in
+
+[tools/once.ts:51](https://github.com/nevoland/futurise/blob/2d7cb19/lib/tools/once.ts#L51)
+
+▸ **once**(`target`, `eventName`): [`Register`](README.md#register)<[`Listener`](README.md#listener)<`Event`\>, [`ListenerOptions`](README.md#listeneroptions)\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `target` | `EventTarget` |
+| `eventName` | `string` |
+
+#### Returns
+
+[`Register`](README.md#register)<[`Listener`](README.md#listener)<`Event`\>, [`ListenerOptions`](README.md#listeneroptions)\>
+
+#### Defined in
+
+[tools/once.ts:55](https://github.com/nevoland/futurise/blob/2d7cb19/lib/tools/once.ts#L55)
 
 ___
 
@@ -326,7 +482,7 @@ The reduced promise status.
 
 #### Defined in
 
-[tools/reduceStatusList.ts:9](https://github.com/nevoland/futurise/blob/86be09b/lib/tools/reduceStatusList.ts#L9)
+[tools/reduceStatusList.ts:9](https://github.com/nevoland/futurise/blob/2d7cb19/lib/tools/reduceStatusList.ts#L9)
 
 ___
 
@@ -350,7 +506,7 @@ If a `signal` is provided, listens for an `abort` event to reject the promise wi
 
 #### Defined in
 
-[tools/sleep.ts:13](https://github.com/nevoland/futurise/blob/86be09b/lib/tools/sleep.ts#L13)
+[tools/sleep.ts:13](https://github.com/nevoland/futurise/blob/2d7cb19/lib/tools/sleep.ts#L13)
 
 ___
 
@@ -375,7 +531,7 @@ Function that cancels the call of `callback`.
 
 #### Defined in
 
-[tools/timeout.ts:20](https://github.com/nevoland/futurise/blob/86be09b/lib/tools/timeout.ts#L20)
+[tools/timeout.ts:20](https://github.com/nevoland/futurise/blob/2d7cb19/lib/tools/timeout.ts#L20)
 
 ___
 
@@ -402,7 +558,7 @@ A promise that resolves to the `event`.
 
 #### Defined in
 
-[tools/until.ts:12](https://github.com/nevoland/futurise/blob/86be09b/lib/tools/until.ts#L12)
+[tools/until.ts:12](https://github.com/nevoland/futurise/blob/2d7cb19/lib/tools/until.ts#L12)
 
 ___
 
@@ -428,4 +584,4 @@ If a `signal` is provided, listens to it to cancel the promise.
 
 #### Defined in
 
-[tools/untilOnline.ts:14](https://github.com/nevoland/futurise/blob/86be09b/lib/tools/untilOnline.ts#L14)
+[tools/untilOnline.ts:14](https://github.com/nevoland/futurise/blob/2d7cb19/lib/tools/untilOnline.ts#L14)
