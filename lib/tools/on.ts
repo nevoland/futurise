@@ -1,5 +1,3 @@
-/* global Document, DocumentEventMap, HTMLElement, HTMLElementEventMap */
-
 import type { Listener, ListenerOptions, Register, Unregister } from "../types";
 
 /**
@@ -61,7 +59,7 @@ function on(
 function on<T extends HTMLElement | Document | EventTarget, K extends string>(
   target: T,
   eventName: K,
-  listener?: NonNullable<Parameters<T["addEventListener"]>[1]>,
+  listener?: Listener<any>,
   options?: ListenerOptions,
 ): Unregister | Register<Listener<any>, any> {
   if (listener === undefined) {
