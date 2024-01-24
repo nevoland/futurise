@@ -1,1 +1,1 @@
-export { getGlobal } from "@davidbonnet/get-global";
+export { getGlobal } from "@nevoland/get-global";
