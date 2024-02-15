@@ -18,8 +18,9 @@ const GLOBAL_NAME_LIST = [
   "EventTarget",
   "HTMLElement",
   "HTMLElementEventMap",
-  "HTMLElementEventMap",
   "process",
+  "Worker",
+  "WorkerEventMap",
 ];
 
 /** @type { import("eslint").Linter.FlatConfig[] } */

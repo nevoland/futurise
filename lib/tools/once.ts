@@ -22,10 +22,16 @@ function once<K extends keyof DocumentEventMap>(
   listener: Listener<DocumentEventMap[K]>,
   options?: ListenerOptions,
 ): Unregister;
-function once(
+function once<K extends keyof WorkerEventMap>(
+  target: Worker,
+  eventName: K,
+  listener: Listener<WorkerEventMap[K]>,
+  options?: ListenerOptions,
+): Unregister;
+function once<E extends object>(
   target: EventTarget,
   eventName: string,
-  listener: Listener<Event>,
+  listener: Listener<E>,
   options?: ListenerOptions,
 ): Unregister;
 /**
@@ -52,11 +58,18 @@ function once<K extends keyof DocumentEventMap>(
   target: Document,
   eventName: K,
 ): Register<Listener<DocumentEventMap[K]>, ListenerOptions>;
-function once(
+function once<K extends keyof WorkerEventMap>(
+  target: Worker,
+  eventName: K,
+): Register<Listener<WorkerEventMap[K]>, ListenerOptions>;
+function once<E extends object>(
   target: EventTarget,
   eventName: string,
-): Register<Listener<Event>, ListenerOptions>;
-function once<T extends HTMLElement | Document | EventTarget, K extends string>(
+): Register<Listener<E>, ListenerOptions>;
+function once<
+  T extends HTMLElement | Document | Worker | EventTarget,
+  K extends string,
+>(
   target: T,
   eventName: K,
   listener?: Listener<any>,
