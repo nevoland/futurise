@@ -16,7 +16,7 @@ export function until(
 ): Promise<Event> {
   return new Promise((resolve, reject) => {
     const unregister = register((event) => {
-      if (sentinel === undefined || !sentinel(event)) {
+      if (sentinel !== undefined && !sentinel(event)) {
         return;
       }
       unregister();
