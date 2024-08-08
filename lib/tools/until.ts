@@ -9,18 +9,28 @@ import type { Listener, Register } from "../types";
  * @param sentinel Optional sentinel function that validates an `event` occurence.
  * @returns A promise that resolves to the `event`.
  */
-export function until<E extends object = Event>(
+export function until<E = Event>(
   register: Register<Listener<E>, any>,
   signal?: AbortSignal,
   sentinel?: (event: E) => boolean,
+): Promise<E>;
+export function until<E = undefined>(
+  register: Register<Listener<E>, undefined>,
+  signal?: AbortSignal,
+  sentinel?: () => boolean,
+): Promise<undefined>;
+export function until<E>(
+  register: Register<Listener<E | undefined>, any | undefined>,
+  signal?: AbortSignal,
+  sentinel?: ((event: E) => boolean) | (() => boolean),
 ): Promise<E> {
   return new Promise((resolve, reject) => {
-    const unregister = register((event) => {
-      if (sentinel !== undefined && !sentinel(event)) {
+    const unregister = register((event?: E) => {
+      if (sentinel !== undefined && !sentinel(event!)) {
         return;
       }
       unregister();
-      resolve(event);
+      resolve(event!);
     });
     if (signal !== undefined) {
       signal.addEventListener("abort", () => {

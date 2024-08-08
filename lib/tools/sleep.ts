@@ -1,6 +1,5 @@
-import { getGlobal } from "../dependencies.js";
-
-const { setTimeout, clearTimeout } = getGlobal();
+import { timeout } from "./timeout.js";
+import { until } from "./until.js";
 
 /**
  * Returns a promise that resolves after at least `duration` milliseconds elapsed.
@@ -11,16 +10,5 @@ const { setTimeout, clearTimeout } = getGlobal();
  * @returns
  */
 export function sleep(duration: number, signal?: AbortSignal) {
-  return new Promise((resolve, reject) => {
-    const timer = setTimeout(resolve, duration);
-    if (signal !== undefined) {
-      if (signal.aborted) {
-        reject(signal.reason);
-      }
-      signal.addEventListener("abort", () => {
-        clearTimeout(timer);
-        reject(signal.reason);
-      });
-    }
-  });
+  return until(timeout(duration), signal);
 }
