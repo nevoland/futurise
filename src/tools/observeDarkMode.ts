@@ -1,3 +1,5 @@
+/* global MediaQueryListEvent */
+
 import { getGlobal } from "@nevoland/get-global";
 
 export function observeDarkMode(callback: (isDark: boolean) => void) {
