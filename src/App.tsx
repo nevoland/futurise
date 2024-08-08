@@ -20,7 +20,9 @@ export function App() {
   return (
     <>
       <h1 class="text-teal-500">Futurise</h1>
-      <button ref={setRef}>Click this</button>
+      <button class="text-gray-400 dark:text-white" ref={setRef}>
+        Click this
+      </button>
     </>
   );
 }

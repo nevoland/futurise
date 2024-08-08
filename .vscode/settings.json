@@ -4,7 +4,7 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },
-  "eslint.experimental.useFlatConfig": true,
+  "eslint.useFlatConfig": true,
   "eslint.lintTask.enable": true,
   "css.validate": false,
   "less.validate": false,
@@ -13,5 +13,6 @@
       "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "vitest.commandLine": "npx vitest --update",
-  "typescript.tsserver.experimental.enableProjectDiagnostics": true
+  "typescript.tsserver.experimental.enableProjectDiagnostics": true,
+  "typescript.tsdk": "node_modules/typescript/lib"
 }
