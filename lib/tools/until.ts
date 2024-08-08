@@ -25,16 +25,20 @@ export function until<E>(
   sentinel?: ((event: E) => boolean) | (() => boolean),
 ): Promise<E> {
   return new Promise((resolve, reject) => {
-    const unregister = register((event?: E) => {
+    const clear = register((event?: E) => {
       if (sentinel !== undefined && !sentinel(event!)) {
         return;
       }
-      unregister();
+      clear();
       resolve(event!);
     });
     if (signal !== undefined) {
+      if (signal.aborted) {
+        clear();
+        reject(signal.reason);
+      }
       signal.addEventListener("abort", () => {
-        unregister();
+        clear();
         reject(signal.reason);
       });
     }
