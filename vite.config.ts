@@ -20,6 +20,11 @@ export default defineConfig({
       outputPath: resolve("src/components.ts"),
       rootPath: resolve("src/components"),
     }),
+    moduleList({
+      mode: { language: "ts", type: true },
+      outputPath: resolve("lib/types.ts"),
+      rootPath: resolve("lib/types"),
+    }),
     preact(),
   ],
 });
