@@ -8,6 +8,7 @@ futurise
 
 - [Listener](README.md#listener)
 - [ListenerOptions](README.md#listeneroptions)
+- [ListenerTimer](README.md#listenertimer)
 - [PromiseStatus](README.md#promisestatus)
 - [Register](README.md#register)
 - [Unregister](README.md#unregister)
@@ -27,31 +28,17 @@ futurise
 
 ### Listener
 
-Ƭ **Listener**<`E`\>: (`event`: `E`) => `void`
+Ƭ **Listener**<`E`\>: `E` extends `undefined` ? () => `void` : (`event`: `E`) => `void`
 
 #### Type parameters
 
-| Name | Type |
-| :------ | :------ |
-| `E` | extends `object` |
-
-#### Type declaration
-
-▸ (`event`): `void`
-
-##### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `event` | `E` |
-
-##### Returns
-
-`void`
+| Name |
+| :------ |
+| `E` |
 
 #### Defined in
 
-[types.ts:1](https://github.com/nevoland/futurise/blob/4f13c49/lib/types.ts#L1)
+[types.ts:1](https://github.com/nevoland/futurise/blob/39d80c0/lib/types.ts#L1)
 
 ___
 
@@ -61,7 +48,17 @@ ___
 
 #### Defined in
 
-[types.ts:3](https://github.com/nevoland/futurise/blob/4f13c49/lib/types.ts#L3)
+[types.ts:3](https://github.com/nevoland/futurise/blob/39d80c0/lib/types.ts#L3)
+
+___
+
+### ListenerTimer
+
+Ƭ **ListenerTimer**: [`Listener`](README.md#listener)<`undefined`\>
+
+#### Defined in
+
+[types.ts:5](https://github.com/nevoland/futurise/blob/39d80c0/lib/types.ts#L5)
 
 ___
 
@@ -73,13 +70,13 @@ Status of a promise.
 
 #### Defined in
 
-[types.ts:12](https://github.com/nevoland/futurise/blob/4f13c49/lib/types.ts#L12)
+[types.ts:16](https://github.com/nevoland/futurise/blob/39d80c0/lib/types.ts#L16)
 
 ___
 
 ### Register
 
-Ƭ **Register**<`L`, `O`\>: (`listener`: `L`, `options?`: `O`) => [`Unregister`](README.md#unregister)
+Ƭ **Register**<`L`, `O`\>: `O` extends `undefined` ? (`listener`: `L`) => [`Unregister`](README.md#unregister) : (`listener`: `L`, `options?`: `O`) => [`Unregister`](README.md#unregister)
 
 #### Type parameters
 
@@ -88,24 +85,9 @@ ___
 | `L` |
 | `O` |
 
-#### Type declaration
-
-▸ (`listener`, `options?`): [`Unregister`](README.md#unregister)
-
-##### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `listener` | `L` |
-| `options?` | `O` |
-
-##### Returns
-
-[`Unregister`](README.md#unregister)
-
 #### Defined in
 
-[types.ts:7](https://github.com/nevoland/futurise/blob/4f13c49/lib/types.ts#L7)
+[types.ts:9](https://github.com/nevoland/futurise/blob/39d80c0/lib/types.ts#L9)
 
 ___
 
@@ -123,7 +105,7 @@ ___
 
 #### Defined in
 
-[types.ts:5](https://github.com/nevoland/futurise/blob/4f13c49/lib/types.ts#L5)
+[types.ts:7](https://github.com/nevoland/futurise/blob/39d80c0/lib/types.ts#L7)
 
 ## Functions
 
@@ -131,13 +113,14 @@ ___
 
 ▸ **interval**(`duration`, `callback`): [`Unregister`](README.md#unregister)
 
-Calls `callback` at least every `duration` milliseconds. Returns a function that stops future calls of `callback`. If `duration` is falsy, uses `requestAnimationFrame` if available.
+Calls `callback` at least every `duration` milliseconds. Returns a function that stops future calls of `callback`.
+If the `duration` is `0`, it uses `requestAnimationFrame` if available.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `duration` | `number` | Duration of each interval in milliseconds. |
+| `duration` | `number` | Minimum duration of each interval in milliseconds. |
 | `callback` | () => `void` | Called at the end of each interval. |
 
 #### Returns
@@ -148,7 +131,29 @@ Function that cancels the interval.
 
 #### Defined in
 
-[tools/interval.ts:19](https://github.com/nevoland/futurise/blob/4f13c49/lib/tools/interval.ts#L19)
+[tools/interval.ts:20](https://github.com/nevoland/futurise/blob/39d80c0/lib/tools/interval.ts#L20)
+
+▸ **interval**(`duration`): [`Register`](README.md#register)<[`ListenerTimer`](README.md#listenertimer), `undefined`\>
+
+Returns a function that registers a `callback` to be called at least every `duration` milliseconds.
+If the `duration` is `0`, if uses `requestAnimationFrame` if available.
+The interval is set during this call.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `duration` | `number` | Minimum duration of each interval in milliseconds. |
+
+#### Returns
+
+[`Register`](README.md#register)<[`ListenerTimer`](README.md#listenertimer), `undefined`\>
+
+Function that registers a callback to call at each elapsed interval, and returns a function that unregisters it. If the latter function unregisters the last callback, it clears the interval. When registering a callback on a cleared interval, throws an `Error` exception.
+
+#### Defined in
+
+[tools/interval.ts:29](https://github.com/nevoland/futurise/blob/39d80c0/lib/tools/interval.ts#L29)
 
 ___
 
@@ -182,7 +187,7 @@ A function that removes the `listener`.
 
 #### Defined in
 
-[tools/on.ts:13](https://github.com/nevoland/futurise/blob/4f13c49/lib/tools/on.ts#L13)
+[tools/on.ts:13](https://github.com/nevoland/futurise/blob/39d80c0/lib/tools/on.ts#L13)
 
 ▸ **on**<`K`\>(`target`, `eventName`, `listener`, `options?`): [`Unregister`](README.md#unregister)
 
@@ -207,7 +212,7 @@ A function that removes the `listener`.
 
 #### Defined in
 
-[tools/on.ts:19](https://github.com/nevoland/futurise/blob/4f13c49/lib/tools/on.ts#L19)
+[tools/on.ts:19](https://github.com/nevoland/futurise/blob/39d80c0/lib/tools/on.ts#L19)
 
 ▸ **on**<`K`\>(`target`, `eventName`, `listener`, `options?`): [`Unregister`](README.md#unregister)
 
@@ -232,7 +237,7 @@ A function that removes the `listener`.
 
 #### Defined in
 
-[tools/on.ts:25](https://github.com/nevoland/futurise/blob/4f13c49/lib/tools/on.ts#L25)
+[tools/on.ts:25](https://github.com/nevoland/futurise/blob/39d80c0/lib/tools/on.ts#L25)
 
 ▸ **on**<`E`\>(`target`, `eventName`, `listener`, `options?`): [`Unregister`](README.md#unregister)
 
@@ -257,7 +262,7 @@ A function that removes the `listener`.
 
 #### Defined in
 
-[tools/on.ts:31](https://github.com/nevoland/futurise/blob/4f13c49/lib/tools/on.ts#L31)
+[tools/on.ts:31](https://github.com/nevoland/futurise/blob/39d80c0/lib/tools/on.ts#L31)
 
 ▸ **on**<`K`\>(`target`, `eventName`): [`Register`](README.md#register)<[`Listener`](README.md#listener)<`HTMLElementEventMap`[`K`]\>, [`ListenerOptions`](README.md#listeneroptions)\>
 
@@ -294,7 +299,7 @@ off();
 
 #### Defined in
 
-[tools/on.ts:53](https://github.com/nevoland/futurise/blob/4f13c49/lib/tools/on.ts#L53)
+[tools/on.ts:53](https://github.com/nevoland/futurise/blob/39d80c0/lib/tools/on.ts#L53)
 
 ▸ **on**<`K`\>(`target`, `eventName`): [`Register`](README.md#register)<[`Listener`](README.md#listener)<`DocumentEventMap`[`K`]\>, [`ListenerOptions`](README.md#listeneroptions)\>
 
@@ -317,7 +322,7 @@ off();
 
 #### Defined in
 
-[tools/on.ts:57](https://github.com/nevoland/futurise/blob/4f13c49/lib/tools/on.ts#L57)
+[tools/on.ts:57](https://github.com/nevoland/futurise/blob/39d80c0/lib/tools/on.ts#L57)
 
 ▸ **on**<`K`\>(`target`, `eventName`): [`Register`](README.md#register)<[`Listener`](README.md#listener)<`WorkerEventMap`[`K`]\>, [`ListenerOptions`](README.md#listeneroptions)\>
 
@@ -340,7 +345,7 @@ off();
 
 #### Defined in
 
-[tools/on.ts:61](https://github.com/nevoland/futurise/blob/4f13c49/lib/tools/on.ts#L61)
+[tools/on.ts:61](https://github.com/nevoland/futurise/blob/39d80c0/lib/tools/on.ts#L61)
 
 ▸ **on**<`E`\>(`target`, `eventName`): [`Register`](README.md#register)<[`Listener`](README.md#listener)<`E`\>, [`ListenerOptions`](README.md#listeneroptions)\>
 
@@ -363,7 +368,7 @@ off();
 
 #### Defined in
 
-[tools/on.ts:65](https://github.com/nevoland/futurise/blob/4f13c49/lib/tools/on.ts#L65)
+[tools/on.ts:65](https://github.com/nevoland/futurise/blob/39d80c0/lib/tools/on.ts#L65)
 
 ___
 
@@ -397,7 +402,7 @@ A function that removes the `listener`.
 
 #### Defined in
 
-[tools/once.ts:13](https://github.com/nevoland/futurise/blob/4f13c49/lib/tools/once.ts#L13)
+[tools/once.ts:13](https://github.com/nevoland/futurise/blob/39d80c0/lib/tools/once.ts#L13)
 
 ▸ **once**<`K`\>(`target`, `eventName`, `listener`, `options?`): [`Unregister`](README.md#unregister)
 
@@ -422,7 +427,7 @@ A function that removes the `listener`.
 
 #### Defined in
 
-[tools/once.ts:19](https://github.com/nevoland/futurise/blob/4f13c49/lib/tools/once.ts#L19)
+[tools/once.ts:19](https://github.com/nevoland/futurise/blob/39d80c0/lib/tools/once.ts#L19)
 
 ▸ **once**<`K`\>(`target`, `eventName`, `listener`, `options?`): [`Unregister`](README.md#unregister)
 
@@ -447,7 +452,7 @@ A function that removes the `listener`.
 
 #### Defined in
 
-[tools/once.ts:25](https://github.com/nevoland/futurise/blob/4f13c49/lib/tools/once.ts#L25)
+[tools/once.ts:25](https://github.com/nevoland/futurise/blob/39d80c0/lib/tools/once.ts#L25)
 
 ▸ **once**<`E`\>(`target`, `eventName`, `listener`, `options?`): [`Unregister`](README.md#unregister)
 
@@ -472,7 +477,7 @@ A function that removes the `listener`.
 
 #### Defined in
 
-[tools/once.ts:31](https://github.com/nevoland/futurise/blob/4f13c49/lib/tools/once.ts#L31)
+[tools/once.ts:31](https://github.com/nevoland/futurise/blob/39d80c0/lib/tools/once.ts#L31)
 
 ▸ **once**<`K`\>(`target`, `eventName`): [`Register`](README.md#register)<[`Listener`](README.md#listener)<`HTMLElementEventMap`[`K`]\>, [`ListenerOptions`](README.md#listeneroptions)\>
 
@@ -509,7 +514,7 @@ off();
 
 #### Defined in
 
-[tools/once.ts:53](https://github.com/nevoland/futurise/blob/4f13c49/lib/tools/once.ts#L53)
+[tools/once.ts:53](https://github.com/nevoland/futurise/blob/39d80c0/lib/tools/once.ts#L53)
 
 ▸ **once**<`K`\>(`target`, `eventName`): [`Register`](README.md#register)<[`Listener`](README.md#listener)<`DocumentEventMap`[`K`]\>, [`ListenerOptions`](README.md#listeneroptions)\>
 
@@ -532,7 +537,7 @@ off();
 
 #### Defined in
 
-[tools/once.ts:57](https://github.com/nevoland/futurise/blob/4f13c49/lib/tools/once.ts#L57)
+[tools/once.ts:57](https://github.com/nevoland/futurise/blob/39d80c0/lib/tools/once.ts#L57)
 
 ▸ **once**<`K`\>(`target`, `eventName`): [`Register`](README.md#register)<[`Listener`](README.md#listener)<`WorkerEventMap`[`K`]\>, [`ListenerOptions`](README.md#listeneroptions)\>
 
@@ -555,7 +560,7 @@ off();
 
 #### Defined in
 
-[tools/once.ts:61](https://github.com/nevoland/futurise/blob/4f13c49/lib/tools/once.ts#L61)
+[tools/once.ts:61](https://github.com/nevoland/futurise/blob/39d80c0/lib/tools/once.ts#L61)
 
 ▸ **once**<`E`\>(`target`, `eventName`): [`Register`](README.md#register)<[`Listener`](README.md#listener)<`E`\>, [`ListenerOptions`](README.md#listeneroptions)\>
 
@@ -578,7 +583,7 @@ off();
 
 #### Defined in
 
-[tools/once.ts:65](https://github.com/nevoland/futurise/blob/4f13c49/lib/tools/once.ts#L65)
+[tools/once.ts:65](https://github.com/nevoland/futurise/blob/39d80c0/lib/tools/once.ts#L65)
 
 ___
 
@@ -602,13 +607,13 @@ The reduced promise status.
 
 #### Defined in
 
-[tools/reduceStatusList.ts:9](https://github.com/nevoland/futurise/blob/4f13c49/lib/tools/reduceStatusList.ts#L9)
+[tools/reduceStatusList.ts:9](https://github.com/nevoland/futurise/blob/39d80c0/lib/tools/reduceStatusList.ts#L9)
 
 ___
 
 ### sleep
 
-▸ **sleep**(`duration`, `signal?`): `Promise`<`unknown`\>
+▸ **sleep**(`duration`, `signal?`): `Promise`<`undefined`\>
 
 Returns a promise that resolves after at least `duration` milliseconds elapsed.
 If a `signal` is provided, listens for an `abort` event to reject the promise with the `signal.reason`.
@@ -622,11 +627,11 @@ If a `signal` is provided, listens for an `abort` event to reject the promise wi
 
 #### Returns
 
-`Promise`<`unknown`\>
+`Promise`<`undefined`\>
 
 #### Defined in
 
-[tools/sleep.ts:13](https://github.com/nevoland/futurise/blob/4f13c49/lib/tools/sleep.ts#L13)
+[tools/sleep.ts:12](https://github.com/nevoland/futurise/blob/39d80c0/lib/tools/sleep.ts#L12)
 
 ___
 
@@ -635,13 +640,14 @@ ___
 ▸ **timeout**(`duration`, `callback`): [`Unregister`](README.md#unregister)
 
 Calls `callback` after at least `duration` milliseconds. Returns a function that cancels the future call of `callback`, if not already called.
+If the `duration` is `0`, it uses `requestAnimationFrame` if available.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `duration` | `number` | Timeout duration in milliseconds. |
-| `callback` | () => `void` | Called after the duration elapsed. |
+| `callback` | () => `void` | Called after the `duration` elapsed. |
 
 #### Returns
 
@@ -651,7 +657,29 @@ Function that cancels the call of `callback`.
 
 #### Defined in
 
-[tools/timeout.ts:20](https://github.com/nevoland/futurise/blob/4f13c49/lib/tools/timeout.ts#L20)
+[tools/timeout.ts:21](https://github.com/nevoland/futurise/blob/39d80c0/lib/tools/timeout.ts#L21)
+
+▸ **timeout**(`duration`): [`Register`](README.md#register)<[`ListenerTimer`](README.md#listenertimer), `undefined`\>
+
+Returns a function that registers a `callback` to be called after at least `duration` milliseconds elapsed.
+If the `duration` is `0`, if uses `requestAnimationFrame` if available.
+The timer is set during this call.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `duration` | `number` | Timeout duration in milliseconds. |
+
+#### Returns
+
+[`Register`](README.md#register)<[`ListenerTimer`](README.md#listenertimer), `undefined`\>
+
+Function that registers a callback to call after the `duration` elapsed, and returns a function that unregisters it. If the latter function unregisters the last callback, it clears the timeout. When registering a callback on a cleared interval, throws an `Error` exception.
+
+#### Defined in
+
+[tools/timeout.ts:30](https://github.com/nevoland/futurise/blob/39d80c0/lib/tools/timeout.ts#L30)
 
 ___
 
@@ -666,13 +694,13 @@ If a `signal` is provided, listens to it to cancel the promise.
 
 | Name | Type |
 | :------ | :------ |
-| `E` | extends `object` = `Event` |
+| `E` | `Event` |
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `register` | [`Register`](README.md#register)<[`Listener`](README.md#listener)<`E`\>, `any`\> | Function that registers a listener for the event to catch. |
+| `register` | (`listener`: [`Listener`](README.md#listener)<`E`\>) => [`Unregister`](README.md#unregister) \| (`listener`: [`Listener`](README.md#listener)<`E`\>, `options?`: `any`) => [`Unregister`](README.md#unregister) | Function that registers a listener for the event to catch. |
 | `signal?` | `AbortSignal` | Optional signal parameter on which the `abort` event will be listened to. |
 | `sentinel?` | (`event`: `E`) => `boolean` | Optional sentinel function that validates an `event` occurence. |
 
@@ -684,7 +712,31 @@ A promise that resolves to the `event`.
 
 #### Defined in
 
-[tools/until.ts:12](https://github.com/nevoland/futurise/blob/4f13c49/lib/tools/until.ts#L12)
+[tools/until.ts:12](https://github.com/nevoland/futurise/blob/39d80c0/lib/tools/until.ts#L12)
+
+▸ **until**<`E`\>(`register`, `signal?`, `sentinel?`): `Promise`<`undefined`\>
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `E` | `undefined` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `register` | (`listener`: [`Listener`](README.md#listener)<`E`\>) => [`Unregister`](README.md#unregister) |
+| `signal?` | `AbortSignal` |
+| `sentinel?` | () => `boolean` |
+
+#### Returns
+
+`Promise`<`undefined`\>
+
+#### Defined in
+
+[tools/until.ts:17](https://github.com/nevoland/futurise/blob/39d80c0/lib/tools/until.ts#L17)
 
 ___
 
@@ -710,4 +762,4 @@ If a `signal` is provided, listens to it to cancel the promise.
 
 #### Defined in
 
-[tools/untilOnline.ts:14](https://github.com/nevoland/futurise/blob/4f13c49/lib/tools/untilOnline.ts#L14)
+[tools/untilOnline.ts:14](https://github.com/nevoland/futurise/blob/39d80c0/lib/tools/untilOnline.ts#L14)
