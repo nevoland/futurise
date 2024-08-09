@@ -1,6 +1,6 @@
 # Futurise
 
-🔮 Promise, listeners, and timer helper functions.
+🔮 Helpers for things that happen in the future.
 
 ### Features
 
