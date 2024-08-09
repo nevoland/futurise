@@ -1,7 +1,7 @@
 {
   "name": "futurise",
   "private": false,
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Helpers for things that happen in the future.",
   "keywords": [
     "asynchronous",
