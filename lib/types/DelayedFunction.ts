@@ -1,5 +1,5 @@
-export interface CallableDelayed<A extends any[], R> {
-  (...args: A): void;
+export interface DelayedFunction<F extends (...args: any[]) => any> {
+  (...args: Parameters<F>): void;
   /**
    * Cancels the last delayed invocation, if any, of the callable.
    */
@@ -8,7 +8,7 @@ export interface CallableDelayed<A extends any[], R> {
    * Immediately runs the last delayed callable invocation, if any, of the callable and returns its result.
    * @returns The result returned by the callable.
    */
-  flush: () => R;
+  flush: () => ReturnType<F>;
   /**
    * Whether there is a pending invocation of the callable or not.
    */
@@ -16,5 +16,5 @@ export interface CallableDelayed<A extends any[], R> {
   /**
    * The result of the last run invocation.
    */
-  result: R;
+  result: ReturnType<F>;
 }

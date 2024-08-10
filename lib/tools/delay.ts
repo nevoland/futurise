@@ -1,27 +1,23 @@
-import type { CallableDelayed, DelayOptions, Unregister } from "../types.js";
+import type { DelayOptions, DelayedFunction, Unregister } from "../types.js";
 
 import { timeout } from "./timeout.js";
 
 /**
- * Delays invocations of the provided `callbable` for a given `duration`.
+ * Delays invocations of the provided `callable` for a given `duration`.
  *
  * @param duration The delay duration in milliseconds.
  * @param callable The callable to delay.
  * @param options Options to set when the first call happens and whether to throttle it.
- * @returns The delayed callable
+ * @returns The function that delays calls to the callable.
  */
-export function delay<
-  T extends (...args: A) => R,
-  A extends any[] = Parameters<T>,
-  R = ReturnType<T>,
->(
+export function delay<F extends (...args: any[]) => any>(
   duration: number,
-  callable: T,
+  callable: F,
   options: DelayOptions = {},
-): CallableDelayed<A, R> {
+): DelayedFunction<F> {
   let cancel: Unregister | null = null;
-  let callableArgs: A | null = null;
-  let result: R | undefined = undefined;
+  let callableArgs: Parameters<F> | null = null;
+  let result: ReturnType<F> | undefined = undefined;
 
   const { immediate = false, throttle = false } = options;
 
@@ -37,7 +33,7 @@ export function delay<
     }
   };
 
-  const delayedCallable = (...args: A) => {
+  const delayedCallable = (...args: Parameters<F>) => {
     if (immediate && callableArgs == null && cancel == null) {
       result = callable(...args);
     } else {
@@ -82,5 +78,5 @@ export function delay<
       configurable: false,
       get: () => result,
     },
-  }) as CallableDelayed<A, R>;
+  }) as DelayedFunction<F>;
 }
