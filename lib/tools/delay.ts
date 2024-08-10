@@ -72,11 +72,15 @@ export function delay<F extends (...args: any[]) => any>(
     },
     pending: {
       configurable: false,
-      get: () => cancel != null,
+      get() {
+        return cancel != null;
+      },
     },
     result: {
       configurable: false,
-      get: () => result,
+      get() {
+        return result;
+      },
     },
   }) as DelayedFunction<F>;
 }
