@@ -6,17 +6,13 @@
 
 # Function: delay()
 
-> **delay**\<`T`, `A`, `R`\>(`duration`, `callable`, `options`): [`CallableDelayed`](../interfaces/CallableDelayed.md)\<`A`, `R`\>
+> **delay**\<`F`\>(`duration`, `callable`, `options`): [`DelayedFunction`](../interfaces/DelayedFunction.md)\<`F`\>
 
-Delays invocations of the provided `callbable` for a given `duration`.
+Delays invocations of the provided `callable` for a given `duration`.
 
 ## Type Parameters
 
-• **T** *extends* (...`args`) => `R`
-
-• **A** *extends* `any`[] = `Parameters`\<`T`\>
-
-• **R** = `ReturnType`\<`T`\>
+• **F** *extends* (...`args`) => `any`
 
 ## Parameters
 
@@ -24,7 +20,7 @@ Delays invocations of the provided `callbable` for a given `duration`.
 
 The delay duration in milliseconds.
 
-• **callable**: `T`
+• **callable**: `F`
 
 The callable to delay.
 
@@ -34,10 +30,10 @@ Options to set when the first call happens and whether to throttle it.
 
 ## Returns
 
-[`CallableDelayed`](../interfaces/CallableDelayed.md)\<`A`, `R`\>
+[`DelayedFunction`](../interfaces/DelayedFunction.md)\<`F`\>
 
-The delayed callable
+The function that delays calls to the callable.
 
 ## Defined in
 
-[tools/delay.ts:13](https://github.com/nevoland/futurise/blob/24b077828c292e75ff85280bb7b5d97993669b07/lib/tools/delay.ts#L13)
+[tools/delay.ts:13](https://github.com/nevoland/futurise/blob/8a513686f5c22d687856d3646a9ab51e2997391d/lib/tools/delay.ts#L13)

@@ -6,7 +6,7 @@
 
 ## Interfaces
 
-- [CallableDelayed](interfaces/CallableDelayed.md)
+- [DelayedFunction](interfaces/DelayedFunction.md)
 
 ## Type Aliases
 

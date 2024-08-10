@@ -39,7 +39,7 @@ A promise that resolves to the `event`.
 
 ### Defined in
 
-[tools/until.ts:12](https://github.com/nevoland/futurise/blob/24b077828c292e75ff85280bb7b5d97993669b07/lib/tools/until.ts#L12)
+[tools/until.ts:12](https://github.com/nevoland/futurise/blob/8a513686f5c22d687856d3646a9ab51e2997391d/lib/tools/until.ts#L12)
 
 ## until(register, signal, sentinel)
 
@@ -63,4 +63,4 @@ A promise that resolves to the `event`.
 
 ### Defined in
 
-[tools/until.ts:17](https://github.com/nevoland/futurise/blob/24b077828c292e75ff85280bb7b5d97993669b07/lib/tools/until.ts#L17)
+[tools/until.ts:17](https://github.com/nevoland/futurise/blob/8a513686f5c22d687856d3646a9ab51e2997391d/lib/tools/until.ts#L17)
