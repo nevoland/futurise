@@ -5,8 +5,9 @@
 ### Features
 
 - Event listener utilities that provide cleanup functions
-- Timer helpers with convenient cleanup functions
+- Timer helpers with convenient registering and cleanup functions
 - Promise generators that wait for event occurrences
+- Tool to delay function calls with throttling and introspection capabilities
 
 ## Usage
 
@@ -255,4 +256,133 @@ unregister1();
 unregister2();
 
 // The interval is cleared
+```
+
+### Delay calls to a function
+
+Delaying the invocation of a callable (also known as "debouncing") can be done using the `delay` tool:
+
+```typescript
+import { delay } from "futurise";
+
+function doSomething(parameter) {
+  heavyTaskWith(parameter);
+}
+
+const doSomethingLessOften = delay(1000, doSomething);
+
+doSomethingLessOften(1);
+doSomethingLessOften(2);
+doSomethingLessOften(3);
+doSomethingLessOften(4);
+
+// Only calls `doSomething(4)` after 1 second
+```
+
+#### Immediate call
+
+By default, the function is called after the specified duration elapsed. The `immediate` option enables calling the function immediately:
+
+```typescript
+import { delay } from "futurise";
+
+function doSomething(parameter) {
+  heavyTaskWith(parameter);
+}
+
+const doSomethingLessOften = delay(1000, doSomething, { immediate: true });
+
+// Calls `doSomething(1)` immediately
+doSomethingLessOften(1);
+doSomethingLessOften(2);
+doSomethingLessOften(3);
+doSomethingLessOften(4);
+
+// Calls `doSomething(4)` after 1 second
+```
+
+#### Throttling
+
+By default, the function is delayed until the duration elapsed before a new call is made. The `throttle` option enables calling the function at most once every period set by the `duration`:
+
+```typescript
+import { delay, sleep } from "futurise";
+
+function doSomething(parameter) {
+  heavyTaskWith(parameter);
+}
+
+const doSomethingLessOften = delay(1000, doSomething, { throttle: true });
+
+async function task() {
+  doSomethingLessOften(1);
+  await sleep(400);
+  doSomethingLessOften(2);
+  await sleep(400);
+  doSomethingLessOften(3);
+  await sleep(400); // Calls `doSomething(3)` while it awaits the sleep timer
+  doSomethingLessOften(4);
+  await sleep(1000); // Calls `doSomething(4)` while it awaits the sleep timer
+}
+```
+
+Without the throttling mode, the function would have been called only once with `doSomething(4)`.
+
+#### Cancel pending call
+
+The function returned by `delay` has a `cancel()` method that cancel the pending invocation:
+
+```typescript
+import { delay } from "futurise";
+
+function doSomething(parameter) {
+  heavyTaskWith(parameter);
+}
+
+const doSomethingLessOften = delay(1000, doSomething);
+
+doSomethingLessOften(1);
+doSomethingLessOften.cancel();
+
+// The function is not called
+```
+
+#### Flush the pending call
+
+The function returned by `delay` has a `flush()` method that immediately runs the pending invocation and returns the resulting value:
+
+```typescript
+import { delay } from "futurise";
+
+function doSomething(parameter) {
+  // Returns something
+  return heavyTaskWith(parameter);
+}
+
+const doSomethingLessOften = delay(1000, doSomething);
+
+doSomethingLessOften(1);
+// The function is immediately called and its result is returned
+const result = doSomethingLessOften.flush();
+```
+
+#### Getting the last result
+
+The function returned by `delay` has a `result` property that is set to the value returned by the function:
+
+```typescript
+import { delay } from "futurise";
+
+function doSomething(parameter) {
+  // Returns something
+  return heavyTaskWith(parameter);
+}
+
+// Setting `immediate: true` to immediately execute the first invocation:
+const doSomethingLessOften = delay(1000, doSomething, { immediate: true });
+
+// The function is immediately called
+doSomethingLessOften(1);
+// The result can be retreived as such
+const result = doSomethingLessOften.result;
 ```
