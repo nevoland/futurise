@@ -25,7 +25,7 @@ export function timeout(duration: number, callback: ListenerTimer): Unregister;
  * The timer is set during this call.
  *
  * @param duration Timeout duration in milliseconds.
- * @returns Function that registers a callback to call after the `duration` elapsed, and returns a function that unregisters it. If the latter function unregisters the last callback, it clears the timeout. When registering a callback on a cleared interval, throws an `Error` exception.
+ * @returns Function that registers a callback to call after the `duration` elapsed, and returns a function that unregisters it. If the latter function unregisters the last callback, it clears the timeout.
  */
 export function timeout(duration: number): Register<ListenerTimer, undefined>;
 export function timeout(
@@ -39,16 +39,11 @@ export function timeout(
         callbackList[i]();
       }
     });
-    let cleared = false;
     return (callback) => {
-      if (cleared) {
-        throw new Error("Cannot register a callback to a cleared timeout.");
-      }
       callbackList.push(callback);
       return () => {
         callbackList.splice(callbackList.indexOf(callback), 1);
         if (callbackList.length === 0) {
-          cleared = true;
           clear();
         }
       };
