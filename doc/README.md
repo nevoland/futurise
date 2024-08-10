@@ -4,8 +4,13 @@
 
 # futurise
 
+## Interfaces
+
+- [CallableDelayed](interfaces/CallableDelayed.md)
+
 ## Type Aliases
 
+- [DelayOptions](type-aliases/DelayOptions.md)
 - [Listener](type-aliases/Listener.md)
 - [ListenerOptions](type-aliases/ListenerOptions.md)
 - [ListenerTimer](type-aliases/ListenerTimer.md)
@@ -15,6 +20,7 @@
 
 ## Functions
 
+- [delay](functions/delay.md)
 - [interval](functions/interval.md)
 - [on](functions/on.md)
 - [once](functions/once.md)

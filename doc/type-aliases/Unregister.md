@@ -14,4 +14,4 @@
 
 ## Defined in
 
-[types/Unregister.ts:1](https://github.com/nevoland/futurise/blob/601ad82256b16b57df25308fadfb39e6c754671f/lib/types/Unregister.ts#L1)
+[types/Unregister.ts:1](https://github.com/nevoland/futurise/blob/24b077828c292e75ff85280bb7b5d97993669b07/lib/types/Unregister.ts#L1)

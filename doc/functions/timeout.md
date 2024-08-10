@@ -31,7 +31,7 @@ Function that cancels the call of `callback`.
 
 ### Defined in
 
-[tools/timeout.ts:21](https://github.com/nevoland/futurise/blob/601ad82256b16b57df25308fadfb39e6c754671f/lib/tools/timeout.ts#L21)
+[tools/timeout.ts:21](https://github.com/nevoland/futurise/blob/24b077828c292e75ff85280bb7b5d97993669b07/lib/tools/timeout.ts#L21)
 
 ## timeout(duration)
 
@@ -51,8 +51,8 @@ Timeout duration in milliseconds.
 
 [`Register`](../type-aliases/Register.md)\<[`ListenerTimer`](../type-aliases/ListenerTimer.md), `undefined`\>
 
-Function that registers a callback to call after the `duration` elapsed, and returns a function that unregisters it. If the latter function unregisters the last callback, it clears the timeout. When registering a callback on a cleared interval, throws an `Error` exception.
+Function that registers a callback to call after the `duration` elapsed, and returns a function that unregisters it. If the latter function unregisters the last callback, it clears the timeout.
 
 ### Defined in
 
-[tools/timeout.ts:30](https://github.com/nevoland/futurise/blob/601ad82256b16b57df25308fadfb39e6c754671f/lib/tools/timeout.ts#L30)
+[tools/timeout.ts:30](https://github.com/nevoland/futurise/blob/24b077828c292e75ff85280bb7b5d97993669b07/lib/tools/timeout.ts#L30)

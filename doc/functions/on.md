@@ -41,7 +41,7 @@ A function that removes the `listener`.
 
 ### Defined in
 
-[tools/on.ts:13](https://github.com/nevoland/futurise/blob/601ad82256b16b57df25308fadfb39e6c754671f/lib/tools/on.ts#L13)
+[tools/on.ts:13](https://github.com/nevoland/futurise/blob/24b077828c292e75ff85280bb7b5d97993669b07/lib/tools/on.ts#L13)
 
 ## on(target, eventName, listener, options)
 
@@ -67,7 +67,7 @@ A function that removes the `listener`.
 
 ### Defined in
 
-[tools/on.ts:19](https://github.com/nevoland/futurise/blob/601ad82256b16b57df25308fadfb39e6c754671f/lib/tools/on.ts#L19)
+[tools/on.ts:19](https://github.com/nevoland/futurise/blob/24b077828c292e75ff85280bb7b5d97993669b07/lib/tools/on.ts#L19)
 
 ## on(target, eventName, listener, options)
 
@@ -93,7 +93,7 @@ A function that removes the `listener`.
 
 ### Defined in
 
-[tools/on.ts:25](https://github.com/nevoland/futurise/blob/601ad82256b16b57df25308fadfb39e6c754671f/lib/tools/on.ts#L25)
+[tools/on.ts:25](https://github.com/nevoland/futurise/blob/24b077828c292e75ff85280bb7b5d97993669b07/lib/tools/on.ts#L25)
 
 ## on(target, eventName, listener, options)
 
@@ -119,7 +119,7 @@ A function that removes the `listener`.
 
 ### Defined in
 
-[tools/on.ts:31](https://github.com/nevoland/futurise/blob/601ad82256b16b57df25308fadfb39e6c754671f/lib/tools/on.ts#L31)
+[tools/on.ts:31](https://github.com/nevoland/futurise/blob/24b077828c292e75ff85280bb7b5d97993669b07/lib/tools/on.ts#L31)
 
 ## on(target, eventName)
 
@@ -157,7 +157,7 @@ off();
 
 ### Defined in
 
-[tools/on.ts:53](https://github.com/nevoland/futurise/blob/601ad82256b16b57df25308fadfb39e6c754671f/lib/tools/on.ts#L53)
+[tools/on.ts:53](https://github.com/nevoland/futurise/blob/24b077828c292e75ff85280bb7b5d97993669b07/lib/tools/on.ts#L53)
 
 ## on(target, eventName)
 
@@ -179,7 +179,7 @@ off();
 
 ### Defined in
 
-[tools/on.ts:57](https://github.com/nevoland/futurise/blob/601ad82256b16b57df25308fadfb39e6c754671f/lib/tools/on.ts#L57)
+[tools/on.ts:57](https://github.com/nevoland/futurise/blob/24b077828c292e75ff85280bb7b5d97993669b07/lib/tools/on.ts#L57)
 
 ## on(target, eventName)
 
@@ -201,7 +201,7 @@ off();
 
 ### Defined in
 
-[tools/on.ts:61](https://github.com/nevoland/futurise/blob/601ad82256b16b57df25308fadfb39e6c754671f/lib/tools/on.ts#L61)
+[tools/on.ts:61](https://github.com/nevoland/futurise/blob/24b077828c292e75ff85280bb7b5d97993669b07/lib/tools/on.ts#L61)
 
 ## on(target, eventName)
 
@@ -223,4 +223,4 @@ off();
 
 ### Defined in
 
-[tools/on.ts:65](https://github.com/nevoland/futurise/blob/601ad82256b16b57df25308fadfb39e6c754671f/lib/tools/on.ts#L65)
+[tools/on.ts:65](https://github.com/nevoland/futurise/blob/24b077828c292e75ff85280bb7b5d97993669b07/lib/tools/on.ts#L65)
