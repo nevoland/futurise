@@ -33,54 +33,55 @@ export function delay<F extends (...args: any[]) => any>(
     }
   };
 
-  const delayedCallable = (...args: Parameters<F>) => {
-    if (immediate && callableArgs == null && cancel == null) {
-      result = callable(...args);
-    } else {
-      callableArgs = args;
-    }
-    if (throttle) {
-      if (cancel == null) {
-        cancel = timeout(duration, call);
+  return Object.defineProperties(
+    (...args: Parameters<F>) => {
+      if (immediate && callableArgs == null && cancel == null) {
+        result = callable(...args);
+      } else {
+        callableArgs = args;
       }
-      return;
-    }
-    cancel?.();
-    cancel = timeout(duration, call);
-  };
-
-  return Object.defineProperties(delayedCallable, {
-    cancel: {
-      configurable: false,
-      value: () => {
-        if (cancel != null) {
-          cancel();
-          cancel = null;
+      if (throttle) {
+        if (cancel == null) {
+          cancel = timeout(duration, call);
         }
-        callableArgs = null;
+        return;
+      }
+      cancel?.();
+      cancel = timeout(duration, call);
+    },
+    {
+      cancel: {
+        configurable: false,
+        value: () => {
+          if (cancel != null) {
+            cancel();
+            cancel = null;
+          }
+          callableArgs = null;
+        },
+      },
+      flush: {
+        configurable: false,
+        value: () => {
+          if (cancel != null) {
+            cancel();
+            call();
+          }
+          return result;
+        },
+      },
+      pending: {
+        configurable: false,
+        get() {
+          return cancel != null;
+        },
+      },
+      result: {
+        configurable: false,
+        get() {
+          return result;
+        },
       },
     },
-    flush: {
-      configurable: false,
-      value: () => {
-        if (cancel != null) {
-          cancel();
-          call();
-        }
-        return result;
-      },
-    },
-    pending: {
-      configurable: false,
-      get() {
-        return cancel != null;
-      },
-    },
-    result: {
-      configurable: false,
-      get() {
-        return result;
-      },
-    },
-  }) as DelayedFunction<F>;
+  ) as DelayedFunction<F>;
 }
