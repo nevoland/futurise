@@ -2,6 +2,7 @@
 export { delay } from "./tools/delay.js";
 export { interval } from "./tools/interval.js";
 export { on } from "./tools/on.js";
+export { onDark } from "./tools/onDark.js";
 export { once } from "./tools/once.js";
 export { reduceStatusList } from "./tools/reduceStatusList.js";
 export { sleep } from "./tools/sleep.js";
