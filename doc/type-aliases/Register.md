@@ -16,4 +16,4 @@
 
 ## Defined in
 
-[types/Register.ts:3](https://github.com/nevoland/futurise/blob/8a513686f5c22d687856d3646a9ab51e2997391d/lib/types/Register.ts#L3)
+[types/Register.ts:3](https://github.com/nevoland/futurise/blob/54db9391420145098bc39b459b46ddbae49856b0/lib/types/Register.ts#L3)

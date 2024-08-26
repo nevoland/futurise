@@ -23,6 +23,7 @@
 - [delay](functions/delay.md)
 - [interval](functions/interval.md)
 - [on](functions/on.md)
+- [onDark](functions/onDark.md)
 - [once](functions/once.md)
 - [reduceStatusList](functions/reduceStatusList.md)
 - [sleep](functions/sleep.md)

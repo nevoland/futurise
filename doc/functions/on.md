@@ -41,7 +41,7 @@ A function that removes the `listener`.
 
 ### Defined in
 
-[tools/on.ts:13](https://github.com/nevoland/futurise/blob/8a513686f5c22d687856d3646a9ab51e2997391d/lib/tools/on.ts#L13)
+[tools/on.ts:13](https://github.com/nevoland/futurise/blob/54db9391420145098bc39b459b46ddbae49856b0/lib/tools/on.ts#L13)
 
 ## on(target, eventName, listener, options)
 
@@ -67,7 +67,59 @@ A function that removes the `listener`.
 
 ### Defined in
 
-[tools/on.ts:19](https://github.com/nevoland/futurise/blob/8a513686f5c22d687856d3646a9ab51e2997391d/lib/tools/on.ts#L19)
+[tools/on.ts:19](https://github.com/nevoland/futurise/blob/54db9391420145098bc39b459b46ddbae49856b0/lib/tools/on.ts#L19)
+
+## on(target, eventName, listener, options)
+
+> **on**\<`K`\>(`target`, `eventName`, `listener`, `options`?): [`Unregister`](../type-aliases/Unregister.md)
+
+### Type Parameters
+
+• **K** *extends* `"change"`
+
+### Parameters
+
+• **target**: `MediaQueryList`
+
+• **eventName**: `K`
+
+• **listener**: [`Listener`](../type-aliases/Listener.md)\<`MediaQueryListEventMap`\[`K`\]\>
+
+• **options?**: `boolean` \| `AddEventListenerOptions`
+
+### Returns
+
+[`Unregister`](../type-aliases/Unregister.md)
+
+### Defined in
+
+[tools/on.ts:25](https://github.com/nevoland/futurise/blob/54db9391420145098bc39b459b46ddbae49856b0/lib/tools/on.ts#L25)
+
+## on(target, eventName, listener, options)
+
+> **on**\<`K`\>(`target`, `eventName`, `listener`, `options`?): [`Unregister`](../type-aliases/Unregister.md)
+
+### Type Parameters
+
+• **K** *extends* keyof `MediaRecorderEventMap`
+
+### Parameters
+
+• **target**: `MediaRecorder`
+
+• **eventName**: `K`
+
+• **listener**: [`Listener`](../type-aliases/Listener.md)\<`MediaRecorderEventMap`\[`K`\]\>
+
+• **options?**: `boolean` \| `AddEventListenerOptions`
+
+### Returns
+
+[`Unregister`](../type-aliases/Unregister.md)
+
+### Defined in
+
+[tools/on.ts:31](https://github.com/nevoland/futurise/blob/54db9391420145098bc39b459b46ddbae49856b0/lib/tools/on.ts#L31)
 
 ## on(target, eventName, listener, options)
 
@@ -93,7 +145,7 @@ A function that removes the `listener`.
 
 ### Defined in
 
-[tools/on.ts:25](https://github.com/nevoland/futurise/blob/8a513686f5c22d687856d3646a9ab51e2997391d/lib/tools/on.ts#L25)
+[tools/on.ts:37](https://github.com/nevoland/futurise/blob/54db9391420145098bc39b459b46ddbae49856b0/lib/tools/on.ts#L37)
 
 ## on(target, eventName, listener, options)
 
@@ -119,7 +171,7 @@ A function that removes the `listener`.
 
 ### Defined in
 
-[tools/on.ts:31](https://github.com/nevoland/futurise/blob/8a513686f5c22d687856d3646a9ab51e2997391d/lib/tools/on.ts#L31)
+[tools/on.ts:43](https://github.com/nevoland/futurise/blob/54db9391420145098bc39b459b46ddbae49856b0/lib/tools/on.ts#L43)
 
 ## on(target, eventName)
 
@@ -157,7 +209,7 @@ off();
 
 ### Defined in
 
-[tools/on.ts:53](https://github.com/nevoland/futurise/blob/8a513686f5c22d687856d3646a9ab51e2997391d/lib/tools/on.ts#L53)
+[tools/on.ts:65](https://github.com/nevoland/futurise/blob/54db9391420145098bc39b459b46ddbae49856b0/lib/tools/on.ts#L65)
 
 ## on(target, eventName)
 
@@ -179,7 +231,51 @@ off();
 
 ### Defined in
 
-[tools/on.ts:57](https://github.com/nevoland/futurise/blob/8a513686f5c22d687856d3646a9ab51e2997391d/lib/tools/on.ts#L57)
+[tools/on.ts:69](https://github.com/nevoland/futurise/blob/54db9391420145098bc39b459b46ddbae49856b0/lib/tools/on.ts#L69)
+
+## on(target, eventName)
+
+> **on**\<`K`\>(`target`, `eventName`): [`Register`](../type-aliases/Register.md)\<[`Listener`](../type-aliases/Listener.md)\<`MediaQueryListEventMap`\[`K`\]\>, [`ListenerOptions`](../type-aliases/ListenerOptions.md)\>
+
+### Type Parameters
+
+• **K** *extends* `"change"`
+
+### Parameters
+
+• **target**: `MediaQueryList`
+
+• **eventName**: `K`
+
+### Returns
+
+[`Register`](../type-aliases/Register.md)\<[`Listener`](../type-aliases/Listener.md)\<`MediaQueryListEventMap`\[`K`\]\>, [`ListenerOptions`](../type-aliases/ListenerOptions.md)\>
+
+### Defined in
+
+[tools/on.ts:73](https://github.com/nevoland/futurise/blob/54db9391420145098bc39b459b46ddbae49856b0/lib/tools/on.ts#L73)
+
+## on(target, eventName)
+
+> **on**\<`K`\>(`target`, `eventName`): [`Register`](../type-aliases/Register.md)\<[`Listener`](../type-aliases/Listener.md)\<`MediaRecorderEventMap`\[`K`\]\>, [`ListenerOptions`](../type-aliases/ListenerOptions.md)\>
+
+### Type Parameters
+
+• **K** *extends* keyof `MediaRecorderEventMap`
+
+### Parameters
+
+• **target**: `MediaRecorder`
+
+• **eventName**: `K`
+
+### Returns
+
+[`Register`](../type-aliases/Register.md)\<[`Listener`](../type-aliases/Listener.md)\<`MediaRecorderEventMap`\[`K`\]\>, [`ListenerOptions`](../type-aliases/ListenerOptions.md)\>
+
+### Defined in
+
+[tools/on.ts:77](https://github.com/nevoland/futurise/blob/54db9391420145098bc39b459b46ddbae49856b0/lib/tools/on.ts#L77)
 
 ## on(target, eventName)
 
@@ -201,7 +297,7 @@ off();
 
 ### Defined in
 
-[tools/on.ts:61](https://github.com/nevoland/futurise/blob/8a513686f5c22d687856d3646a9ab51e2997391d/lib/tools/on.ts#L61)
+[tools/on.ts:81](https://github.com/nevoland/futurise/blob/54db9391420145098bc39b459b46ddbae49856b0/lib/tools/on.ts#L81)
 
 ## on(target, eventName)
 
@@ -223,4 +319,4 @@ off();
 
 ### Defined in
 
-[tools/on.ts:65](https://github.com/nevoland/futurise/blob/8a513686f5c22d687856d3646a9ab51e2997391d/lib/tools/on.ts#L65)
+[tools/on.ts:85](https://github.com/nevoland/futurise/blob/54db9391420145098bc39b459b46ddbae49856b0/lib/tools/on.ts#L85)
