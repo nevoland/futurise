@@ -22,6 +22,18 @@ function on<K extends keyof DocumentEventMap>(
   listener: Listener<DocumentEventMap[K]>,
   options?: ListenerOptions,
 ): Unregister;
+function on<K extends keyof MediaQueryListEventMap>(
+  target: MediaQueryList,
+  eventName: K,
+  listener: Listener<MediaQueryListEventMap[K]>,
+  options?: ListenerOptions,
+): Unregister;
+function on<K extends keyof MediaRecorderEventMap>(
+  target: MediaRecorder,
+  eventName: K,
+  listener: Listener<MediaRecorderEventMap[K]>,
+  options?: ListenerOptions,
+): Unregister;
 function on<K extends keyof WorkerEventMap>(
   target: Worker,
   eventName: K,
@@ -58,6 +70,14 @@ function on<K extends keyof DocumentEventMap>(
   target: Document,
   eventName: K,
 ): Register<Listener<DocumentEventMap[K]>, ListenerOptions>;
+function on<K extends keyof MediaQueryListEventMap>(
+  target: MediaQueryList,
+  eventName: K,
+): Register<Listener<MediaQueryListEventMap[K]>, ListenerOptions>;
+function on<K extends keyof MediaRecorderEventMap>(
+  target: MediaRecorder,
+  eventName: K,
+): Register<Listener<MediaRecorderEventMap[K]>, ListenerOptions>;
 function on<K extends keyof WorkerEventMap>(
   target: Worker,
   eventName: K,
