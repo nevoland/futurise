@@ -15,10 +15,12 @@ Everything is exported from the main entry-point through an ES6 module:
 
 ```js
 import {
+  EventEmitter,
   on,
   once,
   timeout,
   interval,
+  delay,
   until,
   untilOnline,
   reduceStatusList,
