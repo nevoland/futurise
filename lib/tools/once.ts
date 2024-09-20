@@ -77,7 +77,7 @@ function once<K extends keyof WorkerEventMap>(
 function once<E extends EventMap, K extends keyof E>(
   target: EventEmitter<E>,
   eventName: K,
-): Register<Listener<E[K]>, undefined>;
+): Register<Listener<E[K]>, never>;
 function once<E>(
   target: EventTarget,
   eventName: string,

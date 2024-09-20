@@ -97,7 +97,7 @@ function on<K extends keyof WorkerEventMap>(
 function on<E extends EventMap, K extends keyof E>(
   target: EventEmitter<E>,
   eventName: K,
-): Register<Listener<E[K]>, undefined>;
+): Register<Listener<E[K]>, never>;
 function on<E>(
   target: EventTarget,
   eventName: string | number | symbol,
