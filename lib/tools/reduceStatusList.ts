@@ -1,7 +1,7 @@
 import type { PromiseStatus } from "../types";
 
 /**
- * Returns a reduced promise status, prioritizing `"rejected"` over `"pending"` over `"idle"` over `"fulfilled"`.
+ * Returns a reduced promise status, prioritizing `"rejected"` over `"pending"` over `"fulfilled"` over `"idle"`.
  *
  * @param statusList List of promise statuses.
  * @returns The reduced promise status.
@@ -16,23 +16,22 @@ export function reduceStatusList(
   if (statusList.every((status) => status === templateStatus)) {
     return templateStatus;
   }
-  const count: Record<PromiseStatus, number> = {
+  const count: Record<Exclude<PromiseStatus, "rejected">, number> = {
     fulfilled: 0,
     idle: 0,
     pending: 0,
-    rejected: 0,
   };
   for (const status of statusList) {
+    if (status === "rejected") {
+      return "rejected";
+    }
     count[status]++;
-  }
-  if (count.rejected > 0) {
-    return "rejected";
   }
   if (count.pending > 0) {
     return "pending";
   }
-  if (count.idle > 0) {
-    return "idle";
+  if (count.fulfilled > 0) {
+    return "fulfilled";
   }
-  return "fulfilled";
+  return "idle";
 }
