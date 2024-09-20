@@ -41,7 +41,7 @@ A function that removes the `listener`.
 
 ### Defined in
 
-[tools/once.ts:13](https://github.com/nevoland/futurise/blob/54db9391420145098bc39b459b46ddbae49856b0/lib/tools/once.ts#L13)
+[tools/once.ts:20](https://github.com/nevoland/futurise/blob/63f48b6115a80787f9d38f76cd4d2ba6aa6e217f/lib/tools/once.ts#L20)
 
 ## once(target, eventName, listener, options)
 
@@ -67,7 +67,7 @@ A function that removes the `listener`.
 
 ### Defined in
 
-[tools/once.ts:19](https://github.com/nevoland/futurise/blob/54db9391420145098bc39b459b46ddbae49856b0/lib/tools/once.ts#L19)
+[tools/once.ts:26](https://github.com/nevoland/futurise/blob/63f48b6115a80787f9d38f76cd4d2ba6aa6e217f/lib/tools/once.ts#L26)
 
 ## once(target, eventName, listener, options)
 
@@ -93,7 +93,33 @@ A function that removes the `listener`.
 
 ### Defined in
 
-[tools/once.ts:25](https://github.com/nevoland/futurise/blob/54db9391420145098bc39b459b46ddbae49856b0/lib/tools/once.ts#L25)
+[tools/once.ts:32](https://github.com/nevoland/futurise/blob/63f48b6115a80787f9d38f76cd4d2ba6aa6e217f/lib/tools/once.ts#L32)
+
+## once(target, eventName, listener)
+
+> **once**\<`E`, `K`\>(`target`, `eventName`, `listener`): [`Unregister`](../type-aliases/Unregister.md)
+
+### Type Parameters
+
+• **E** *extends* [`EventMap`](../type-aliases/EventMap.md)
+
+• **K** *extends* `string` \| `number` \| `symbol`
+
+### Parameters
+
+• **target**: [`EventEmitter`](../classes/EventEmitter.md)\<`E`\>
+
+• **eventName**: `K`
+
+• **listener**: [`Listener`](../type-aliases/Listener.md)\<`E`\[`K`\]\>
+
+### Returns
+
+[`Unregister`](../type-aliases/Unregister.md)
+
+### Defined in
+
+[tools/once.ts:38](https://github.com/nevoland/futurise/blob/63f48b6115a80787f9d38f76cd4d2ba6aa6e217f/lib/tools/once.ts#L38)
 
 ## once(target, eventName, listener, options)
 
@@ -101,7 +127,7 @@ A function that removes the `listener`.
 
 ### Type Parameters
 
-• **E** *extends* `object`
+• **E**
 
 ### Parameters
 
@@ -119,7 +145,7 @@ A function that removes the `listener`.
 
 ### Defined in
 
-[tools/once.ts:31](https://github.com/nevoland/futurise/blob/54db9391420145098bc39b459b46ddbae49856b0/lib/tools/once.ts#L31)
+[tools/once.ts:43](https://github.com/nevoland/futurise/blob/63f48b6115a80787f9d38f76cd4d2ba6aa6e217f/lib/tools/once.ts#L43)
 
 ## once(target, eventName)
 
@@ -157,7 +183,7 @@ off();
 
 ### Defined in
 
-[tools/once.ts:53](https://github.com/nevoland/futurise/blob/54db9391420145098bc39b459b46ddbae49856b0/lib/tools/once.ts#L53)
+[tools/once.ts:65](https://github.com/nevoland/futurise/blob/63f48b6115a80787f9d38f76cd4d2ba6aa6e217f/lib/tools/once.ts#L65)
 
 ## once(target, eventName)
 
@@ -179,7 +205,7 @@ off();
 
 ### Defined in
 
-[tools/once.ts:57](https://github.com/nevoland/futurise/blob/54db9391420145098bc39b459b46ddbae49856b0/lib/tools/once.ts#L57)
+[tools/once.ts:69](https://github.com/nevoland/futurise/blob/63f48b6115a80787f9d38f76cd4d2ba6aa6e217f/lib/tools/once.ts#L69)
 
 ## once(target, eventName)
 
@@ -201,7 +227,31 @@ off();
 
 ### Defined in
 
-[tools/once.ts:61](https://github.com/nevoland/futurise/blob/54db9391420145098bc39b459b46ddbae49856b0/lib/tools/once.ts#L61)
+[tools/once.ts:73](https://github.com/nevoland/futurise/blob/63f48b6115a80787f9d38f76cd4d2ba6aa6e217f/lib/tools/once.ts#L73)
+
+## once(target, eventName)
+
+> **once**\<`E`, `K`\>(`target`, `eventName`): [`Register`](../type-aliases/Register.md)\<[`Listener`](../type-aliases/Listener.md)\<`E`\[`K`\]\>, `undefined`\>
+
+### Type Parameters
+
+• **E** *extends* [`EventMap`](../type-aliases/EventMap.md)
+
+• **K** *extends* `string` \| `number` \| `symbol`
+
+### Parameters
+
+• **target**: [`EventEmitter`](../classes/EventEmitter.md)\<`E`\>
+
+• **eventName**: `K`
+
+### Returns
+
+[`Register`](../type-aliases/Register.md)\<[`Listener`](../type-aliases/Listener.md)\<`E`\[`K`\]\>, `undefined`\>
+
+### Defined in
+
+[tools/once.ts:77](https://github.com/nevoland/futurise/blob/63f48b6115a80787f9d38f76cd4d2ba6aa6e217f/lib/tools/once.ts#L77)
 
 ## once(target, eventName)
 
@@ -209,7 +259,7 @@ off();
 
 ### Type Parameters
 
-• **E** *extends* `object`
+• **E**
 
 ### Parameters
 
@@ -223,4 +273,4 @@ off();
 
 ### Defined in
 
-[tools/once.ts:65](https://github.com/nevoland/futurise/blob/54db9391420145098bc39b459b46ddbae49856b0/lib/tools/once.ts#L65)
+[tools/once.ts:81](https://github.com/nevoland/futurise/blob/63f48b6115a80787f9d38f76cd4d2ba6aa6e217f/lib/tools/once.ts#L81)

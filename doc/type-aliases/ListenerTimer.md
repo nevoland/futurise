@@ -10,4 +10,4 @@
 
 ## Defined in
 
-[types/ListenerTimer.ts:3](https://github.com/nevoland/futurise/blob/54db9391420145098bc39b459b46ddbae49856b0/lib/types/ListenerTimer.ts#L3)
+[types/ListenerTimer.ts:3](https://github.com/nevoland/futurise/blob/63f48b6115a80787f9d38f76cd4d2ba6aa6e217f/lib/types/ListenerTimer.ts#L3)

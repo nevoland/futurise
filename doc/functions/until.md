@@ -19,7 +19,7 @@ If a `signal` is provided, listens to it to cancel the promise.
 
 ### Parameters
 
-• **register**: (`listener`) => [`Unregister`](../type-aliases/Unregister.md) \| (`listener`, `options`?) => [`Unregister`](../type-aliases/Unregister.md)
+• **register**
 
 Function that registers a listener for the event to catch.
 
@@ -39,7 +39,7 @@ A promise that resolves to the `event`.
 
 ### Defined in
 
-[tools/until.ts:12](https://github.com/nevoland/futurise/blob/54db9391420145098bc39b459b46ddbae49856b0/lib/tools/until.ts#L12)
+[tools/until.ts:12](https://github.com/nevoland/futurise/blob/63f48b6115a80787f9d38f76cd4d2ba6aa6e217f/lib/tools/until.ts#L12)
 
 ## until(register, signal, sentinel)
 
@@ -63,4 +63,4 @@ A promise that resolves to the `event`.
 
 ### Defined in
 
-[tools/until.ts:17](https://github.com/nevoland/futurise/blob/54db9391420145098bc39b459b46ddbae49856b0/lib/tools/until.ts#L17)
+[tools/until.ts:17](https://github.com/nevoland/futurise/blob/63f48b6115a80787f9d38f76cd4d2ba6aa6e217f/lib/tools/until.ts#L17)

@@ -8,7 +8,7 @@
 
 > **reduceStatusList**(...`statusList`): [`PromiseStatus`](../type-aliases/PromiseStatus.md)
 
-Returns a reduced promise status, prioritizing `"rejected"` over `"pending"` over `"idle"` over `"fulfilled"`.
+Returns a reduced promise status, prioritizing `"rejected"` over `"pending"` over `"fulfilled"` over `"idle"`.
 
 ## Parameters
 
@@ -24,4 +24,4 @@ The reduced promise status.
 
 ## Defined in
 
-[tools/reduceStatusList.ts:9](https://github.com/nevoland/futurise/blob/54db9391420145098bc39b459b46ddbae49856b0/lib/tools/reduceStatusList.ts#L9)
+[tools/reduceStatusList.ts:9](https://github.com/nevoland/futurise/blob/63f48b6115a80787f9d38f76cd4d2ba6aa6e217f/lib/tools/reduceStatusList.ts#L9)

@@ -6,7 +6,7 @@
 
 # Type Alias: Listener\<E\>
 
-> **Listener**\<`E`\>: `E` *extends* `undefined` ? () => `void` : (`event`) => `void`
+> **Listener**\<`E`\>: `undefined` *extends* `E` ? () => `void` : (`event`) => `void`
 
 ## Type Parameters
 
@@ -14,4 +14,4 @@
 
 ## Defined in
 
-[types/Listener.ts:1](https://github.com/nevoland/futurise/blob/54db9391420145098bc39b459b46ddbae49856b0/lib/types/Listener.ts#L1)
+[types/Listener.ts:1](https://github.com/nevoland/futurise/blob/63f48b6115a80787f9d38f76cd4d2ba6aa6e217f/lib/types/Listener.ts#L1)

@@ -4,6 +4,10 @@
 
 # futurise
 
+## Classes
+
+- [EventEmitter](classes/EventEmitter.md)
+
 ## Interfaces
 
 - [DelayedFunction](interfaces/DelayedFunction.md)
@@ -11,6 +15,7 @@
 ## Type Aliases
 
 - [DelayOptions](type-aliases/DelayOptions.md)
+- [EventMap](type-aliases/EventMap.md)
 - [Listener](type-aliases/Listener.md)
 - [ListenerOptions](type-aliases/ListenerOptions.md)
 - [ListenerTimer](type-aliases/ListenerTimer.md)

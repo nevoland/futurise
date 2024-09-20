@@ -41,7 +41,7 @@ A function that removes the `listener`.
 
 ### Defined in
 
-[tools/on.ts:13](https://github.com/nevoland/futurise/blob/54db9391420145098bc39b459b46ddbae49856b0/lib/tools/on.ts#L13)
+[tools/on.ts:20](https://github.com/nevoland/futurise/blob/63f48b6115a80787f9d38f76cd4d2ba6aa6e217f/lib/tools/on.ts#L20)
 
 ## on(target, eventName, listener, options)
 
@@ -67,7 +67,7 @@ A function that removes the `listener`.
 
 ### Defined in
 
-[tools/on.ts:19](https://github.com/nevoland/futurise/blob/54db9391420145098bc39b459b46ddbae49856b0/lib/tools/on.ts#L19)
+[tools/on.ts:26](https://github.com/nevoland/futurise/blob/63f48b6115a80787f9d38f76cd4d2ba6aa6e217f/lib/tools/on.ts#L26)
 
 ## on(target, eventName, listener, options)
 
@@ -93,7 +93,7 @@ A function that removes the `listener`.
 
 ### Defined in
 
-[tools/on.ts:25](https://github.com/nevoland/futurise/blob/54db9391420145098bc39b459b46ddbae49856b0/lib/tools/on.ts#L25)
+[tools/on.ts:32](https://github.com/nevoland/futurise/blob/63f48b6115a80787f9d38f76cd4d2ba6aa6e217f/lib/tools/on.ts#L32)
 
 ## on(target, eventName, listener, options)
 
@@ -119,7 +119,7 @@ A function that removes the `listener`.
 
 ### Defined in
 
-[tools/on.ts:31](https://github.com/nevoland/futurise/blob/54db9391420145098bc39b459b46ddbae49856b0/lib/tools/on.ts#L31)
+[tools/on.ts:38](https://github.com/nevoland/futurise/blob/63f48b6115a80787f9d38f76cd4d2ba6aa6e217f/lib/tools/on.ts#L38)
 
 ## on(target, eventName, listener, options)
 
@@ -145,7 +145,33 @@ A function that removes the `listener`.
 
 ### Defined in
 
-[tools/on.ts:37](https://github.com/nevoland/futurise/blob/54db9391420145098bc39b459b46ddbae49856b0/lib/tools/on.ts#L37)
+[tools/on.ts:44](https://github.com/nevoland/futurise/blob/63f48b6115a80787f9d38f76cd4d2ba6aa6e217f/lib/tools/on.ts#L44)
+
+## on(target, eventName, listener)
+
+> **on**\<`E`, `K`\>(`target`, `eventName`, `listener`): [`Unregister`](../type-aliases/Unregister.md)
+
+### Type Parameters
+
+• **E** *extends* [`EventMap`](../type-aliases/EventMap.md)
+
+• **K** *extends* `string` \| `number` \| `symbol`
+
+### Parameters
+
+• **target**: [`EventEmitter`](../classes/EventEmitter.md)\<`E`\>
+
+• **eventName**: `K`
+
+• **listener**: [`Listener`](../type-aliases/Listener.md)\<`E`\[`K`\]\>
+
+### Returns
+
+[`Unregister`](../type-aliases/Unregister.md)
+
+### Defined in
+
+[tools/on.ts:50](https://github.com/nevoland/futurise/blob/63f48b6115a80787f9d38f76cd4d2ba6aa6e217f/lib/tools/on.ts#L50)
 
 ## on(target, eventName, listener, options)
 
@@ -153,7 +179,7 @@ A function that removes the `listener`.
 
 ### Type Parameters
 
-• **E** *extends* `object`
+• **E**
 
 ### Parameters
 
@@ -171,7 +197,7 @@ A function that removes the `listener`.
 
 ### Defined in
 
-[tools/on.ts:43](https://github.com/nevoland/futurise/blob/54db9391420145098bc39b459b46ddbae49856b0/lib/tools/on.ts#L43)
+[tools/on.ts:55](https://github.com/nevoland/futurise/blob/63f48b6115a80787f9d38f76cd4d2ba6aa6e217f/lib/tools/on.ts#L55)
 
 ## on(target, eventName)
 
@@ -209,7 +235,7 @@ off();
 
 ### Defined in
 
-[tools/on.ts:65](https://github.com/nevoland/futurise/blob/54db9391420145098bc39b459b46ddbae49856b0/lib/tools/on.ts#L65)
+[tools/on.ts:77](https://github.com/nevoland/futurise/blob/63f48b6115a80787f9d38f76cd4d2ba6aa6e217f/lib/tools/on.ts#L77)
 
 ## on(target, eventName)
 
@@ -231,7 +257,7 @@ off();
 
 ### Defined in
 
-[tools/on.ts:69](https://github.com/nevoland/futurise/blob/54db9391420145098bc39b459b46ddbae49856b0/lib/tools/on.ts#L69)
+[tools/on.ts:81](https://github.com/nevoland/futurise/blob/63f48b6115a80787f9d38f76cd4d2ba6aa6e217f/lib/tools/on.ts#L81)
 
 ## on(target, eventName)
 
@@ -253,7 +279,7 @@ off();
 
 ### Defined in
 
-[tools/on.ts:73](https://github.com/nevoland/futurise/blob/54db9391420145098bc39b459b46ddbae49856b0/lib/tools/on.ts#L73)
+[tools/on.ts:85](https://github.com/nevoland/futurise/blob/63f48b6115a80787f9d38f76cd4d2ba6aa6e217f/lib/tools/on.ts#L85)
 
 ## on(target, eventName)
 
@@ -275,7 +301,7 @@ off();
 
 ### Defined in
 
-[tools/on.ts:77](https://github.com/nevoland/futurise/blob/54db9391420145098bc39b459b46ddbae49856b0/lib/tools/on.ts#L77)
+[tools/on.ts:89](https://github.com/nevoland/futurise/blob/63f48b6115a80787f9d38f76cd4d2ba6aa6e217f/lib/tools/on.ts#L89)
 
 ## on(target, eventName)
 
@@ -297,7 +323,31 @@ off();
 
 ### Defined in
 
-[tools/on.ts:81](https://github.com/nevoland/futurise/blob/54db9391420145098bc39b459b46ddbae49856b0/lib/tools/on.ts#L81)
+[tools/on.ts:93](https://github.com/nevoland/futurise/blob/63f48b6115a80787f9d38f76cd4d2ba6aa6e217f/lib/tools/on.ts#L93)
+
+## on(target, eventName)
+
+> **on**\<`E`, `K`\>(`target`, `eventName`): [`Register`](../type-aliases/Register.md)\<[`Listener`](../type-aliases/Listener.md)\<`E`\[`K`\]\>, `undefined`\>
+
+### Type Parameters
+
+• **E** *extends* [`EventMap`](../type-aliases/EventMap.md)
+
+• **K** *extends* `string` \| `number` \| `symbol`
+
+### Parameters
+
+• **target**: [`EventEmitter`](../classes/EventEmitter.md)\<`E`\>
+
+• **eventName**: `K`
+
+### Returns
+
+[`Register`](../type-aliases/Register.md)\<[`Listener`](../type-aliases/Listener.md)\<`E`\[`K`\]\>, `undefined`\>
+
+### Defined in
+
+[tools/on.ts:97](https://github.com/nevoland/futurise/blob/63f48b6115a80787f9d38f76cd4d2ba6aa6e217f/lib/tools/on.ts#L97)
 
 ## on(target, eventName)
 
@@ -305,13 +355,13 @@ off();
 
 ### Type Parameters
 
-• **E** *extends* `object`
+• **E**
 
 ### Parameters
 
 • **target**: `EventTarget`
 
-• **eventName**: `string`
+• **eventName**: `string` \| `number` \| `symbol`
 
 ### Returns
 
@@ -319,4 +369,4 @@ off();
 
 ### Defined in
 
-[tools/on.ts:85](https://github.com/nevoland/futurise/blob/54db9391420145098bc39b459b46ddbae49856b0/lib/tools/on.ts#L85)
+[tools/on.ts:101](https://github.com/nevoland/futurise/blob/63f48b6115a80787f9d38f76cd4d2ba6aa6e217f/lib/tools/on.ts#L101)
