@@ -39,9 +39,37 @@ Documentation is generated [here](doc/README.md).
 
 ## Guide
 
+### Create an event emitter
+
+Use `EventEmitter` to create a new event emitter:
+
+```typescript
+import { EventEmitter } from "futurise";
+
+const emitter = new EventEmitter<{
+  A: boolean;
+  B: number;
+}>();
+
+emitter.dispatchEvent("A", true);
+emitter.dispatchEvent("B", 4);
+```
+
+It follows the EventTarget interface for adding and removing listeners:
+
+```typescript
+function listener(event: boolean) {
+  console.log(`Boolean value: ${event}`);
+}
+
+emitter.addEventListener("A", listener);
+
+emitter.removeEventListener("B", listener);
+```
+
 ### Register a listener
 
-Use `on` to register a listener on an `element`:
+Use `on` to register a listener on an `element` or any object that has the `addEventListener` and `removeEventListener` methods of the `EventTarget` interface:
 
 ```typescript
 import { on } from "futurise";
