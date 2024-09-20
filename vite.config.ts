@@ -12,6 +12,11 @@ export default defineConfig({
   plugins: [
     moduleList({
       mode: { extension: "js", language: "ts" },
+      outputPath: resolve("lib/classes.ts"),
+      rootPath: resolve("lib/classes"),
+    }),
+    moduleList({
+      mode: { extension: "js", language: "ts" },
       outputPath: resolve("lib/tools.ts"),
       rootPath: resolve("lib/tools"),
     }),

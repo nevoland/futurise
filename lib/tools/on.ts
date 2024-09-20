@@ -1,4 +1,11 @@
-import type { Listener, ListenerOptions, Register, Unregister } from "../types";
+import type { EventEmitter } from "../classes/EventEmitter";
+import type {
+  EventMap,
+  Listener,
+  ListenerOptions,
+  Register,
+  Unregister,
+} from "../types";
 
 /**
  * Listens for `event` on `target`, calling `listener(event)` at each incoming `event`. The provided `options` are identical to those provided to `addEventListener`.
@@ -40,7 +47,12 @@ function on<K extends keyof WorkerEventMap>(
   listener: Listener<WorkerEventMap[K]>,
   options?: ListenerOptions,
 ): Unregister;
-function on<E extends object>(
+function on<E extends EventMap, K extends keyof E>(
+  target: EventEmitter<E>,
+  eventName: K,
+  listener: Listener<E[K]>,
+): Unregister;
+function on<E>(
   target: EventTarget,
   eventName: string,
   listener: Listener<E>,
@@ -82,21 +94,26 @@ function on<K extends keyof WorkerEventMap>(
   target: Worker,
   eventName: K,
 ): Register<Listener<WorkerEventMap[K]>, ListenerOptions>;
-function on<E extends object>(
-  target: EventTarget,
-  eventName: string,
-): Register<Listener<E>, ListenerOptions>;
-function on<
-  T extends HTMLElement | Document | Worker | EventTarget,
-  K extends string,
->(
-  target: T,
+function on<E extends EventMap, K extends keyof E>(
+  target: EventEmitter<E>,
   eventName: K,
+): Register<Listener<E[K]>, undefined>;
+function on<E>(
+  target: EventTarget,
+  eventName: string | number | symbol,
+): Register<Listener<E>, ListenerOptions>;
+function on(
+  target: any,
+  eventName: string | number | symbol,
   listener?: Listener<any>,
-  options?: ListenerOptions,
+  options?: any,
 ): Unregister | Register<Listener<any>, any> {
   if (listener === undefined) {
-    return (listener, options) => on(target, eventName, listener, options);
+    return ((listener: any, options: any) =>
+      on(target, eventName as any, listener, options)) as Register<
+      Listener<any>,
+      any
+    >;
   }
   target.addEventListener(eventName, listener, options);
   return () => {

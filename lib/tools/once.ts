@@ -1,4 +1,11 @@
-import type { Listener, ListenerOptions, Register, Unregister } from "../types";
+import type { EventEmitter } from "../classes";
+import type {
+  EventMap,
+  Listener,
+  ListenerOptions,
+  Register,
+  Unregister,
+} from "../types";
 
 /**
  * Listens for `event` on `target`, calling `listener(event)` at the first occuring `event`. The `listener` is then unregistered upon the first occurence. The provided `options` are identical to those provided to `addEventListener`.
@@ -28,7 +35,12 @@ function once<K extends keyof WorkerEventMap>(
   listener: Listener<WorkerEventMap[K]>,
   options?: ListenerOptions,
 ): Unregister;
-function once<E extends object>(
+function once<E extends EventMap, K extends keyof E>(
+  target: EventEmitter<E>,
+  eventName: K,
+  listener: Listener<E[K]>,
+): Unregister;
+function once<E>(
   target: EventTarget,
   eventName: string,
   listener: Listener<E>,
@@ -62,26 +74,31 @@ function once<K extends keyof WorkerEventMap>(
   target: Worker,
   eventName: K,
 ): Register<Listener<WorkerEventMap[K]>, ListenerOptions>;
-function once<E extends object>(
+function once<E extends EventMap, K extends keyof E>(
+  target: EventEmitter<E>,
+  eventName: K,
+): Register<Listener<E[K]>, undefined>;
+function once<E>(
   target: EventTarget,
   eventName: string,
 ): Register<Listener<E>, ListenerOptions>;
-function once<
-  T extends HTMLElement | Document | Worker | EventTarget,
-  K extends string,
->(
-  target: T,
-  eventName: K,
+function once(
+  target: any,
+  eventName: string | number | symbol,
   listener?: Listener<any>,
-  options?: ListenerOptions,
+  options?: any,
 ): Unregister | Register<Listener<any>, any> {
   if (listener === undefined) {
-    return (listener, options) => once(target, eventName, listener, options);
+    return ((listener: any, options: any) =>
+      once(target, eventName as any, listener, options)) as Register<
+      Listener<any>,
+      any
+    >;
   }
-  const listenOnce: Listener<any> = (event) => {
-    listener(event);
+  const listenOnce: Listener<any> = ((event: any) => {
+    (listener as any)(event);
     off();
-  };
+  }) as any;
   const off = () => {
     target.removeEventListener(eventName, listenOnce, options);
   };

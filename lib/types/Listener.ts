@@ -1,1 +1,1 @@
-export type Listener<E> = E extends undefined ? () => void : (event: E) => void;
+export type Listener<E> = undefined extends E ? () => void : (event: E) => void;
