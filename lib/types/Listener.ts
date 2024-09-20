@@ -1,1 +1,3 @@
-export type Listener<E> = undefined extends E ? () => void : (event: E) => void;
+import type { Defined } from "./Defined";
+
+export type Listener<E> = Defined<E, (event: E) => void, () => void>;

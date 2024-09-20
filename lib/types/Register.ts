@@ -1,5 +1,7 @@
-import type { Unregister } from "../types";
+import type { Defined, Unregister } from "../types";
 
-export type Register<L, O> = undefined extends O
-  ? (listener: L) => Unregister
-  : (listener: L, options?: O) => Unregister;
+export type Register<L, O> = Defined<
+  O,
+  (listener: L, options?: O) => Unregister,
+  (listener: L) => Unregister
+>;
