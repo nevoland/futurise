@@ -12,4 +12,4 @@ Status of a promise.
 
 ## Defined in
 
-[types/PromiseStatus.ts:4](https://github.com/nevoland/futurise/blob/63f48b6115a80787f9d38f76cd4d2ba6aa6e217f/lib/types/PromiseStatus.ts#L4)
+[types/PromiseStatus.ts:4](https://github.com/nevoland/futurise/blob/8ffbf603501f9c1e62e0006561015802889e0a88/lib/types/PromiseStatus.ts#L4)

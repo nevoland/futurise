@@ -6,7 +6,7 @@
 
 # Type Alias: Register\<L, O\>
 
-> **Register**\<`L`, `O`\>: `undefined` *extends* `O` ? (`listener`) => [`Unregister`](Unregister.md) : (`listener`, `options`?) => [`Unregister`](Unregister.md)
+> **Register**\<`L`, `O`\>: [`Defined`](Defined.md)\<`O`, (`listener`, `options`?) => [`Unregister`](Unregister.md), (`listener`) => [`Unregister`](Unregister.md)\>
 
 ## Type Parameters
 
@@ -16,4 +16,4 @@
 
 ## Defined in
 
-[types/Register.ts:3](https://github.com/nevoland/futurise/blob/63f48b6115a80787f9d38f76cd4d2ba6aa6e217f/lib/types/Register.ts#L3)
+[types/Register.ts:3](https://github.com/nevoland/futurise/blob/8ffbf603501f9c1e62e0006561015802889e0a88/lib/types/Register.ts#L3)

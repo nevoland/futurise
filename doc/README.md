@@ -14,6 +14,7 @@
 
 ## Type Aliases
 
+- [Defined](type-aliases/Defined.md)
 - [DelayOptions](type-aliases/DelayOptions.md)
 - [EventMap](type-aliases/EventMap.md)
 - [Listener](type-aliases/Listener.md)

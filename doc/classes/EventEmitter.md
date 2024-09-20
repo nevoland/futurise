@@ -32,7 +32,7 @@ Listeners by event type.
 
 #### Defined in
 
-[classes/EventEmitter.ts:10](https://github.com/nevoland/futurise/blob/63f48b6115a80787f9d38f76cd4d2ba6aa6e217f/lib/classes/EventEmitter.ts#L10)
+[classes/EventEmitter.ts:10](https://github.com/nevoland/futurise/blob/8ffbf603501f9c1e62e0006561015802889e0a88/lib/classes/EventEmitter.ts#L10)
 
 ## Methods
 
@@ -52,7 +52,7 @@ Adds a listener for a particular event.
 
 The event type to listen to.
 
-• **listener**: [`Listener`](../type-aliases/Listener.md)\<`E`\[`K`\]\>
+• **listener**: [`Defined`](../type-aliases/Defined.md)\<`E`\[`K`\], (`event`) => `void`, () => `void`\>
 
 The listener to call with the event.
 
@@ -62,7 +62,7 @@ The listener to call with the event.
 
 #### Defined in
 
-[classes/EventEmitter.ts:20](https://github.com/nevoland/futurise/blob/63f48b6115a80787f9d38f76cd4d2ba6aa6e217f/lib/classes/EventEmitter.ts#L20)
+[classes/EventEmitter.ts:20](https://github.com/nevoland/futurise/blob/8ffbf603501f9c1e62e0006561015802889e0a88/lib/classes/EventEmitter.ts#L20)
 
 ***
 
@@ -92,7 +92,7 @@ The event to dispatch.
 
 #### Defined in
 
-[classes/EventEmitter.ts:52](https://github.com/nevoland/futurise/blob/63f48b6115a80787f9d38f76cd4d2ba6aa6e217f/lib/classes/EventEmitter.ts#L52)
+[classes/EventEmitter.ts:52](https://github.com/nevoland/futurise/blob/8ffbf603501f9c1e62e0006561015802889e0a88/lib/classes/EventEmitter.ts#L52)
 
 ***
 
@@ -112,7 +112,7 @@ Removes a listener from a particular event.
 
 The event type to stop listening.
 
-• **listener**: [`Listener`](../type-aliases/Listener.md)\<`E`\[`K`\]\>
+• **listener**: [`Defined`](../type-aliases/Defined.md)\<`E`\[`K`\], (`event`) => `void`, () => `void`\>
 
 The listener to remove.
 
@@ -122,4 +122,4 @@ The listener to remove.
 
 #### Defined in
 
-[classes/EventEmitter.ts:34](https://github.com/nevoland/futurise/blob/63f48b6115a80787f9d38f76cd4d2ba6aa6e217f/lib/classes/EventEmitter.ts#L34)
+[classes/EventEmitter.ts:34](https://github.com/nevoland/futurise/blob/8ffbf603501f9c1e62e0006561015802889e0a88/lib/classes/EventEmitter.ts#L34)
