@@ -63,8 +63,7 @@ function listener(event: boolean) {
 }
 
 emitter.addEventListener("A", listener);
-
-emitter.removeEventListener("B", listener);
+emitter.removeEventListener("A", listener);
 ```
 
 ### Register a listener
