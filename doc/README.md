@@ -28,6 +28,7 @@
 
 - [delay](functions/delay.md)
 - [interval](functions/interval.md)
+- [off](functions/off.md)
 - [on](functions/on.md)
 - [onDark](functions/onDark.md)
 - [once](functions/once.md)

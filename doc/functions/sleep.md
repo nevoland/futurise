@@ -27,4 +27,4 @@ Optional signal parameter on which the `abort` event will be listened to.
 
 ## Defined in
 
-[tools/sleep.ts:12](https://github.com/nevoland/futurise/blob/8ffbf603501f9c1e62e0006561015802889e0a88/lib/tools/sleep.ts#L12)
+[tools/sleep.ts:12](https://github.com/nevoland/futurise/blob/f004fb130ed2cfd337ed99b8ab01ee1b07fb6a02/lib/tools/sleep.ts#L12)
