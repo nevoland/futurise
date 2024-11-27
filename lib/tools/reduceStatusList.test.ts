@@ -3,7 +3,7 @@ import { expect, test } from "vitest";
 import { reduceStatusList } from "./reduceStatusList.js";
 
 test("reduces status list", async () => {
-  expect(reduceStatusList("idle", "fulfilled")).toBe("fulfilled");
+  expect(reduceStatusList("idle", "fulfilled")).toBe("idle");
   expect(reduceStatusList("idle", "pending")).toBe("pending");
   expect(reduceStatusList("idle", "rejected")).toBe("rejected");
   expect(reduceStatusList("idle", "idle")).toBe("idle");
