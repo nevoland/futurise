@@ -24,4 +24,4 @@ Whether callable invocations should be throttled at the duration interval.
 
 ## Defined in
 
-[types/DelayOptions.ts:1](https://github.com/nevoland/futurise/blob/f004fb130ed2cfd337ed99b8ab01ee1b07fb6a02/lib/types/DelayOptions.ts#L1)
+[types/DelayOptions.ts:1](https://github.com/nevoland/futurise/blob/e367c94d1d167836196f4968f6ce3576b3470f4d/lib/types/DelayOptions.ts#L1)

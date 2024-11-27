@@ -22,7 +22,7 @@
 
 ## Defined in
 
-[types/DelayedFunction.ts:2](https://github.com/nevoland/futurise/blob/f004fb130ed2cfd337ed99b8ab01ee1b07fb6a02/lib/types/DelayedFunction.ts#L2)
+[types/DelayedFunction.ts:2](https://github.com/nevoland/futurise/blob/e367c94d1d167836196f4968f6ce3576b3470f4d/lib/types/DelayedFunction.ts#L2)
 
 ## Properties
 
@@ -38,7 +38,7 @@ Cancels the last delayed invocation, if any, of the callable.
 
 #### Defined in
 
-[types/DelayedFunction.ts:6](https://github.com/nevoland/futurise/blob/f004fb130ed2cfd337ed99b8ab01ee1b07fb6a02/lib/types/DelayedFunction.ts#L6)
+[types/DelayedFunction.ts:6](https://github.com/nevoland/futurise/blob/e367c94d1d167836196f4968f6ce3576b3470f4d/lib/types/DelayedFunction.ts#L6)
 
 ***
 
@@ -54,7 +54,7 @@ The result returned by the callable.
 
 #### Defined in
 
-[types/DelayedFunction.ts:11](https://github.com/nevoland/futurise/blob/f004fb130ed2cfd337ed99b8ab01ee1b07fb6a02/lib/types/DelayedFunction.ts#L11)
+[types/DelayedFunction.ts:11](https://github.com/nevoland/futurise/blob/e367c94d1d167836196f4968f6ce3576b3470f4d/lib/types/DelayedFunction.ts#L11)
 
 ***
 
@@ -66,7 +66,7 @@ Whether there is a pending invocation of the callable or not.
 
 #### Defined in
 
-[types/DelayedFunction.ts:15](https://github.com/nevoland/futurise/blob/f004fb130ed2cfd337ed99b8ab01ee1b07fb6a02/lib/types/DelayedFunction.ts#L15)
+[types/DelayedFunction.ts:15](https://github.com/nevoland/futurise/blob/e367c94d1d167836196f4968f6ce3576b3470f4d/lib/types/DelayedFunction.ts#L15)
 
 ***
 
@@ -78,4 +78,4 @@ The result of the last run invocation.
 
 #### Defined in
 
-[types/DelayedFunction.ts:19](https://github.com/nevoland/futurise/blob/f004fb130ed2cfd337ed99b8ab01ee1b07fb6a02/lib/types/DelayedFunction.ts#L19)
+[types/DelayedFunction.ts:19](https://github.com/nevoland/futurise/blob/e367c94d1d167836196f4968f6ce3576b3470f4d/lib/types/DelayedFunction.ts#L19)

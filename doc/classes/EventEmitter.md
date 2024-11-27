@@ -32,7 +32,7 @@ Listeners by event type.
 
 #### Defined in
 
-[classes/EventEmitter.ts:10](https://github.com/nevoland/futurise/blob/f004fb130ed2cfd337ed99b8ab01ee1b07fb6a02/lib/classes/EventEmitter.ts#L10)
+[classes/EventEmitter.ts:10](https://github.com/nevoland/futurise/blob/e367c94d1d167836196f4968f6ce3576b3470f4d/lib/classes/EventEmitter.ts#L10)
 
 ## Methods
 
@@ -62,7 +62,7 @@ The listener to call with the event.
 
 #### Defined in
 
-[classes/EventEmitter.ts:20](https://github.com/nevoland/futurise/blob/f004fb130ed2cfd337ed99b8ab01ee1b07fb6a02/lib/classes/EventEmitter.ts#L20)
+[classes/EventEmitter.ts:20](https://github.com/nevoland/futurise/blob/e367c94d1d167836196f4968f6ce3576b3470f4d/lib/classes/EventEmitter.ts#L20)
 
 ***
 
@@ -92,7 +92,7 @@ The event to dispatch.
 
 #### Defined in
 
-[classes/EventEmitter.ts:52](https://github.com/nevoland/futurise/blob/f004fb130ed2cfd337ed99b8ab01ee1b07fb6a02/lib/classes/EventEmitter.ts#L52)
+[classes/EventEmitter.ts:52](https://github.com/nevoland/futurise/blob/e367c94d1d167836196f4968f6ce3576b3470f4d/lib/classes/EventEmitter.ts#L52)
 
 ***
 
@@ -122,4 +122,4 @@ The listener to remove.
 
 #### Defined in
 
-[classes/EventEmitter.ts:34](https://github.com/nevoland/futurise/blob/f004fb130ed2cfd337ed99b8ab01ee1b07fb6a02/lib/classes/EventEmitter.ts#L34)
+[classes/EventEmitter.ts:34](https://github.com/nevoland/futurise/blob/e367c94d1d167836196f4968f6ce3576b3470f4d/lib/classes/EventEmitter.ts#L34)

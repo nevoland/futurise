@@ -31,7 +31,7 @@ Function that cancels the call of `callback`.
 
 ### Defined in
 
-[tools/timeout.ts:21](https://github.com/nevoland/futurise/blob/f004fb130ed2cfd337ed99b8ab01ee1b07fb6a02/lib/tools/timeout.ts#L21)
+[tools/timeout.ts:21](https://github.com/nevoland/futurise/blob/e367c94d1d167836196f4968f6ce3576b3470f4d/lib/tools/timeout.ts#L21)
 
 ## timeout(duration)
 
@@ -55,4 +55,4 @@ Function that registers a callback to call after the `duration` elapsed, and ret
 
 ### Defined in
 
-[tools/timeout.ts:30](https://github.com/nevoland/futurise/blob/f004fb130ed2cfd337ed99b8ab01ee1b07fb6a02/lib/tools/timeout.ts#L30)
+[tools/timeout.ts:30](https://github.com/nevoland/futurise/blob/e367c94d1d167836196f4968f6ce3576b3470f4d/lib/tools/timeout.ts#L30)

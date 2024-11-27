@@ -14,4 +14,4 @@
 
 ## Defined in
 
-[types/EventMap.ts:1](https://github.com/nevoland/futurise/blob/f004fb130ed2cfd337ed99b8ab01ee1b07fb6a02/lib/types/EventMap.ts#L1)
+[types/EventMap.ts:1](https://github.com/nevoland/futurise/blob/e367c94d1d167836196f4968f6ce3576b3470f4d/lib/types/EventMap.ts#L1)

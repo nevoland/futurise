@@ -36,4 +36,4 @@ The function that delays calls to the callable.
 
 ## Defined in
 
-[tools/delay.ts:13](https://github.com/nevoland/futurise/blob/f004fb130ed2cfd337ed99b8ab01ee1b07fb6a02/lib/tools/delay.ts#L13)
+[tools/delay.ts:13](https://github.com/nevoland/futurise/blob/e367c94d1d167836196f4968f6ce3576b3470f4d/lib/tools/delay.ts#L13)
