@@ -1,5 +1,4 @@
-export interface DelayedFunction<F extends (...args: any[]) => any> {
-  (...args: Parameters<F>): void;
+export type DelayedFunction<F extends (...args: any[]) => any> = F & {
   /**
    * Cancels the last delayed invocation, if any, of the callable.
    */
@@ -17,4 +16,4 @@ export interface DelayedFunction<F extends (...args: any[]) => any> {
    * The result of the last run invocation.
    */
   result: ReturnType<F>;
-}
+};
