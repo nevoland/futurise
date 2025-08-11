@@ -14,4 +14,4 @@
 
 ## Defined in
 
-[types/Listener.ts:3](https://github.com/nevoland/futurise/blob/e367c94d1d167836196f4968f6ce3576b3470f4d/lib/types/Listener.ts#L3)
+[types/Listener.ts:3](https://github.com/nevoland/futurise/blob/1cd28e2a6cbda8f2e58123bfcca390764dde0e9a/lib/types/Listener.ts#L3)

@@ -25,4 +25,4 @@ A function that stops listening for theme changes.
 
 ## Defined in
 
-[tools/onDark.ts:13](https://github.com/nevoland/futurise/blob/e367c94d1d167836196f4968f6ce3576b3470f4d/lib/tools/onDark.ts#L13)
+[tools/onDark.ts:13](https://github.com/nevoland/futurise/blob/1cd28e2a6cbda8f2e58123bfcca390764dde0e9a/lib/tools/onDark.ts#L13)

@@ -8,14 +8,11 @@
 
 - [EventEmitter](classes/EventEmitter.md)
 
-## Interfaces
-
-- [DelayedFunction](interfaces/DelayedFunction.md)
-
 ## Type Aliases
 
 - [Defined](type-aliases/Defined.md)
 - [DelayOptions](type-aliases/DelayOptions.md)
+- [DelayedFunction](type-aliases/DelayedFunction.md)
 - [EventMap](type-aliases/EventMap.md)
 - [Listener](type-aliases/Listener.md)
 - [ListenerOptions](type-aliases/ListenerOptions.md)

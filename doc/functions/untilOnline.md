@@ -26,4 +26,4 @@ Optional signal parameter on which the `abort` event will be listened to.
 
 ## Defined in
 
-[tools/untilOnline.ts:14](https://github.com/nevoland/futurise/blob/e367c94d1d167836196f4968f6ce3576b3470f4d/lib/tools/untilOnline.ts#L14)
+[tools/untilOnline.ts:14](https://github.com/nevoland/futurise/blob/1cd28e2a6cbda8f2e58123bfcca390764dde0e9a/lib/tools/untilOnline.ts#L14)
