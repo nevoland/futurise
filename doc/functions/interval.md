@@ -31,7 +31,7 @@ Function that cancels the interval.
 
 ### Defined in
 
-[tools/interval.ts:20](https://github.com/nevoland/futurise/blob/19458131a2b9248ce77024f61a31e10e9447a5f7/lib/tools/interval.ts#L20)
+[tools/interval.ts:20](https://github.com/nevoland/futurise/blob/2721ec6d6bead96112e7c9247b86767ebb5613a6/lib/tools/interval.ts#L20)
 
 ## interval(duration)
 
@@ -55,4 +55,4 @@ Function that registers a callback to call at each elapsed interval, and returns
 
 ### Defined in
 
-[tools/interval.ts:29](https://github.com/nevoland/futurise/blob/19458131a2b9248ce77024f61a31e10e9447a5f7/lib/tools/interval.ts#L29)
+[tools/interval.ts:29](https://github.com/nevoland/futurise/blob/2721ec6d6bead96112e7c9247b86767ebb5613a6/lib/tools/interval.ts#L29)

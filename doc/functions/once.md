@@ -41,7 +41,7 @@ A function that removes the `listener`.
 
 ### Defined in
 
-[tools/once.ts:20](https://github.com/nevoland/futurise/blob/19458131a2b9248ce77024f61a31e10e9447a5f7/lib/tools/once.ts#L20)
+[tools/once.ts:21](https://github.com/nevoland/futurise/blob/2721ec6d6bead96112e7c9247b86767ebb5613a6/lib/tools/once.ts#L21)
 
 ## once(target, eventName, listener, options)
 
@@ -67,7 +67,7 @@ A function that removes the `listener`.
 
 ### Defined in
 
-[tools/once.ts:26](https://github.com/nevoland/futurise/blob/19458131a2b9248ce77024f61a31e10e9447a5f7/lib/tools/once.ts#L26)
+[tools/once.ts:27](https://github.com/nevoland/futurise/blob/2721ec6d6bead96112e7c9247b86767ebb5613a6/lib/tools/once.ts#L27)
 
 ## once(target, eventName, listener, options)
 
@@ -93,7 +93,7 @@ A function that removes the `listener`.
 
 ### Defined in
 
-[tools/once.ts:32](https://github.com/nevoland/futurise/blob/19458131a2b9248ce77024f61a31e10e9447a5f7/lib/tools/once.ts#L32)
+[tools/once.ts:33](https://github.com/nevoland/futurise/blob/2721ec6d6bead96112e7c9247b86767ebb5613a6/lib/tools/once.ts#L33)
 
 ## once(target, eventName, listener)
 
@@ -119,7 +119,33 @@ A function that removes the `listener`.
 
 ### Defined in
 
-[tools/once.ts:38](https://github.com/nevoland/futurise/blob/19458131a2b9248ce77024f61a31e10e9447a5f7/lib/tools/once.ts#L38)
+[tools/once.ts:39](https://github.com/nevoland/futurise/blob/2721ec6d6bead96112e7c9247b86767ebb5613a6/lib/tools/once.ts#L39)
+
+## once(target, eventName, listener)
+
+> **once**\<`E`, `K`\>(`target`, `eventName`, `listener`): [`Unregister`](../type-aliases/Unregister.md)
+
+### Type Parameters
+
+• **E** *extends* [`TypedEvent`](../type-aliases/TypedEvent.md)
+
+• **K** *extends* `string`
+
+### Parameters
+
+• **target**: [`TypedEventEmitter`](../classes/TypedEventEmitter.md)\<`E`\>
+
+• **eventName**: `K`
+
+• **listener**: [`Listener`](../type-aliases/Listener.md)\<`Extract`\<`E`, `object`\>\>
+
+### Returns
+
+[`Unregister`](../type-aliases/Unregister.md)
+
+### Defined in
+
+[tools/once.ts:44](https://github.com/nevoland/futurise/blob/2721ec6d6bead96112e7c9247b86767ebb5613a6/lib/tools/once.ts#L44)
 
 ## once(target, eventName, listener, options)
 
@@ -145,7 +171,7 @@ A function that removes the `listener`.
 
 ### Defined in
 
-[tools/once.ts:43](https://github.com/nevoland/futurise/blob/19458131a2b9248ce77024f61a31e10e9447a5f7/lib/tools/once.ts#L43)
+[tools/once.ts:49](https://github.com/nevoland/futurise/blob/2721ec6d6bead96112e7c9247b86767ebb5613a6/lib/tools/once.ts#L49)
 
 ## once(target, eventName)
 
@@ -183,7 +209,7 @@ off();
 
 ### Defined in
 
-[tools/once.ts:65](https://github.com/nevoland/futurise/blob/19458131a2b9248ce77024f61a31e10e9447a5f7/lib/tools/once.ts#L65)
+[tools/once.ts:71](https://github.com/nevoland/futurise/blob/2721ec6d6bead96112e7c9247b86767ebb5613a6/lib/tools/once.ts#L71)
 
 ## once(target, eventName)
 
@@ -205,7 +231,7 @@ off();
 
 ### Defined in
 
-[tools/once.ts:69](https://github.com/nevoland/futurise/blob/19458131a2b9248ce77024f61a31e10e9447a5f7/lib/tools/once.ts#L69)
+[tools/once.ts:75](https://github.com/nevoland/futurise/blob/2721ec6d6bead96112e7c9247b86767ebb5613a6/lib/tools/once.ts#L75)
 
 ## once(target, eventName)
 
@@ -227,7 +253,7 @@ off();
 
 ### Defined in
 
-[tools/once.ts:73](https://github.com/nevoland/futurise/blob/19458131a2b9248ce77024f61a31e10e9447a5f7/lib/tools/once.ts#L73)
+[tools/once.ts:79](https://github.com/nevoland/futurise/blob/2721ec6d6bead96112e7c9247b86767ebb5613a6/lib/tools/once.ts#L79)
 
 ## once(target, eventName)
 
@@ -251,7 +277,31 @@ off();
 
 ### Defined in
 
-[tools/once.ts:77](https://github.com/nevoland/futurise/blob/19458131a2b9248ce77024f61a31e10e9447a5f7/lib/tools/once.ts#L77)
+[tools/once.ts:83](https://github.com/nevoland/futurise/blob/2721ec6d6bead96112e7c9247b86767ebb5613a6/lib/tools/once.ts#L83)
+
+## once(target, eventName)
+
+> **once**\<`E`, `K`\>(`target`, `eventName`): [`Register`](../type-aliases/Register.md)\<[`Listener`](../type-aliases/Listener.md)\<`Extract`\<`E`, `object`\>\>, `never`\>
+
+### Type Parameters
+
+• **E** *extends* [`TypedEvent`](../type-aliases/TypedEvent.md)
+
+• **K** *extends* `string`
+
+### Parameters
+
+• **target**: [`TypedEventEmitter`](../classes/TypedEventEmitter.md)\<`E`\>
+
+• **eventName**: `K`
+
+### Returns
+
+[`Register`](../type-aliases/Register.md)\<[`Listener`](../type-aliases/Listener.md)\<`Extract`\<`E`, `object`\>\>, `never`\>
+
+### Defined in
+
+[tools/once.ts:87](https://github.com/nevoland/futurise/blob/2721ec6d6bead96112e7c9247b86767ebb5613a6/lib/tools/once.ts#L87)
 
 ## once(target, eventName)
 
@@ -273,4 +323,4 @@ off();
 
 ### Defined in
 
-[tools/once.ts:81](https://github.com/nevoland/futurise/blob/19458131a2b9248ce77024f61a31e10e9447a5f7/lib/tools/once.ts#L81)
+[tools/once.ts:91](https://github.com/nevoland/futurise/blob/2721ec6d6bead96112e7c9247b86767ebb5613a6/lib/tools/once.ts#L91)

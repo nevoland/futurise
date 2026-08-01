@@ -24,4 +24,4 @@ The reduced promise status.
 
 ## Defined in
 
-[tools/reduceStatusList.ts:9](https://github.com/nevoland/futurise/blob/19458131a2b9248ce77024f61a31e10e9447a5f7/lib/tools/reduceStatusList.ts#L9)
+[tools/reduceStatusList.ts:9](https://github.com/nevoland/futurise/blob/2721ec6d6bead96112e7c9247b86767ebb5613a6/lib/tools/reduceStatusList.ts#L9)

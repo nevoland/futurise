@@ -7,6 +7,7 @@
 ## Classes
 
 - [EventEmitter](classes/EventEmitter.md)
+- [TypedEventEmitter](classes/TypedEventEmitter.md)
 
 ## Type Aliases
 
@@ -19,6 +20,7 @@
 - [ListenerTimer](type-aliases/ListenerTimer.md)
 - [PromiseStatus](type-aliases/PromiseStatus.md)
 - [Register](type-aliases/Register.md)
+- [TypedEvent](type-aliases/TypedEvent.md)
 - [Unregister](type-aliases/Unregister.md)
 
 ## Functions
