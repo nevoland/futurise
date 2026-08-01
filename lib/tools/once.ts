@@ -1,4 +1,4 @@
-import type { EventEmitter } from "../classes";
+import type { EventEmitter, TypedEventEmitter } from "../classes";
 import type {
   EventMap,
   Listener,
@@ -6,6 +6,7 @@ import type {
   Register,
   Unregister,
 } from "../types";
+import type { TypedEvent } from "../types/TypedEvent";
 
 /**
  * Listens for `event` on `target`, calling `listener(event)` at the first occuring `event`. The `listener` is then unregistered upon the first occurence. The provided `options` are identical to those provided to `addEventListener`.
@@ -39,6 +40,11 @@ function once<E extends EventMap, K extends keyof E>(
   target: EventEmitter<E>,
   eventName: K,
   listener: Listener<E[K]>,
+): Unregister;
+function once<E extends TypedEvent, K extends E["type"]>(
+  target: TypedEventEmitter<E>,
+  eventName: K,
+  listener: Listener<Extract<E, { type: K }>>,
 ): Unregister;
 function once<E>(
   target: EventTarget,
@@ -78,6 +84,10 @@ function once<E extends EventMap, K extends keyof E>(
   target: EventEmitter<E>,
   eventName: K,
 ): Register<Listener<E[K]>, never>;
+function once<E extends TypedEvent, K extends E["type"]>(
+  target: TypedEventEmitter<E>,
+  eventName: K,
+): Register<Listener<Extract<E, { type: K }>>, never>;
 function once<E>(
   target: EventTarget,
   eventName: string,

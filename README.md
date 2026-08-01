@@ -16,6 +16,7 @@ Everything is exported from the main entry-point through an ES6 module:
 ```js
 import {
   EventEmitter,
+  TypedEventEmitter,
   on,
   once,
   timeout,
@@ -43,7 +44,7 @@ Documentation is generated [here](doc/README.md).
 
 ### Create an event emitter
 
-Use `EventEmitter` to create a new event emitter:
+Use `EventEmitter` to create a payload-based event emitter:
 
 ```typescript
 import { EventEmitter } from "futurise";
@@ -57,7 +58,20 @@ emitter.dispatchEvent("A", true);
 emitter.dispatchEvent("B", 4);
 ```
 
-It follows the EventTarget interface for adding and removing listeners:
+Use `TypedEventEmitter` when each event object carries its own `type`:
+
+```typescript
+import { TypedEventEmitter } from "futurise";
+
+const emitter = new TypedEventEmitter<
+  { type: "A"; value: boolean } | { type: "B"; value: number }
+>();
+
+emitter.dispatchEvent({ type: "A", value: true });
+emitter.dispatchEvent({ type: "B", value: 4 });
+```
+
+Both follow the EventTarget interface for adding and removing listeners:
 
 ```typescript
 function listener(event: boolean) {

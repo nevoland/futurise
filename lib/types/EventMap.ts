@@ -1,1 +1,1 @@
-export type EventMap = { [name: string | number | symbol]: unknown };
+export type EventMap = { [type: string]: unknown };

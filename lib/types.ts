@@ -8,4 +8,5 @@ export type { ListenerOptions } from "./types/ListenerOptions";
 export type { ListenerTimer } from "./types/ListenerTimer";
 export type { PromiseStatus } from "./types/PromiseStatus";
 export type { Register } from "./types/Register";
+export type { TypedEvent } from "./types/TypedEvent";
 export type { Unregister } from "./types/Unregister";

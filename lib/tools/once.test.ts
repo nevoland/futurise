@@ -1,6 +1,6 @@
 import { expect, test } from "vitest";
 
-import { EventEmitter } from "../classes.js";
+import { EventEmitter, TypedEventEmitter } from "../classes.js";
 
 import { once } from "./once.js";
 
@@ -38,4 +38,31 @@ test("unregisters listeners", () => {
   })();
   EVENT_EMITTER.dispatchEvent("A", true);
   expect(RESULT).toBe(false);
+});
+
+test("registers listeners only once on typed event emitters", () => {
+  const typedEventEmitter = new TypedEventEmitter<
+    { type: "A"; value: boolean } | { type: "B"; value: number }
+  >();
+
+  let RESULT: boolean | number = false;
+
+  once(typedEventEmitter, "A", (event) => {
+    RESULT = event.value;
+  });
+  typedEventEmitter.dispatchEvent({ type: "A", value: true });
+  expect(RESULT).toBe(true);
+
+  typedEventEmitter.dispatchEvent({ type: "A", value: false });
+  expect(RESULT).toBe(true);
+
+  const register = once(typedEventEmitter, "B");
+  register((event) => {
+    RESULT = event.value;
+  });
+  typedEventEmitter.dispatchEvent({ type: "B", value: 4 });
+  expect(RESULT).toBe(4);
+
+  typedEventEmitter.dispatchEvent({ type: "B", value: 1 });
+  expect(RESULT).toBe(4);
 });

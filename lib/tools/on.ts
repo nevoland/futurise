@@ -1,4 +1,5 @@
 import type { EventEmitter } from "../classes/EventEmitter";
+import type { TypedEventEmitter } from "../classes/TypedEventEmitter";
 import type {
   EventMap,
   Listener,
@@ -6,6 +7,7 @@ import type {
   Register,
   Unregister,
 } from "../types";
+import type { TypedEvent } from "../types/TypedEvent";
 
 /**
  * Listens for `event` on `target`, calling `listener(event)` at each incoming `event`. The provided `options` are identical to those provided to `addEventListener`.
@@ -51,6 +53,11 @@ function on<E extends EventMap, K extends keyof E>(
   target: EventEmitter<E>,
   eventName: K,
   listener: Listener<E[K]>,
+): Unregister;
+function on<E extends TypedEvent, K extends E["type"]>(
+  target: TypedEventEmitter<E>,
+  eventName: K,
+  listener: Listener<Extract<E, { type: K }>>,
 ): Unregister;
 function on<E>(
   target: EventTarget,
@@ -98,6 +105,10 @@ function on<E extends EventMap, K extends keyof E>(
   target: EventEmitter<E>,
   eventName: K,
 ): Register<Listener<E[K]>, never>;
+function on<E extends TypedEvent, K extends E["type"]>(
+  target: TypedEventEmitter<E>,
+  eventName: K,
+): Register<Listener<Extract<E, { type: K }>>, never>;
 function on<E>(
   target: EventTarget,
   eventName: string | number | symbol,
