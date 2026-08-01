@@ -7,9 +7,23 @@ export class EventEmitter<E extends EventMap> {
   /**
    * Listeners by event type.
    */
-  listeners: {
+  #listeners: {
     [K in keyof E]?: Listener<E[K]>[];
-  } = {};
+  };
+
+  constructor() {
+    this.#listeners = {};
+  }
+
+  /**
+   * Returns whether there are any listeners for a particular event type.
+   *
+   * @param type The event type to check for listeners.
+   * @returns Whether there are any listeners for the event type.
+   */
+  hasListeners<K extends keyof E>(type: K): boolean {
+    return (this.#listeners[type]?.length ?? 0) > 0;
+  }
 
   /**
    * Adds a listener for a particular event.
@@ -18,9 +32,9 @@ export class EventEmitter<E extends EventMap> {
    * @param listener The listener to call with the event.
    */
   addEventListener<K extends keyof E>(type: K, listener: Listener<E[K]>) {
-    const listeners = this.listeners[type] ?? [];
+    const listeners = this.#listeners[type] ?? [];
     if (listeners.length === 0) {
-      this.listeners[type] = listeners;
+      this.#listeners[type] = listeners;
     }
     listeners.push(listener);
   }
@@ -32,7 +46,7 @@ export class EventEmitter<E extends EventMap> {
    * @param listener The listener to remove.
    */
   removeEventListener<K extends keyof E>(type: K, listener: Listener<E[K]>) {
-    const listeners = this.listeners[type];
+    const listeners = this.#listeners[type];
     if (listeners === undefined || listeners.length === 0) {
       return;
     }
@@ -50,7 +64,7 @@ export class EventEmitter<E extends EventMap> {
    * @param event The event to dispatch.
    */
   dispatchEvent<K extends keyof E>(type: K, event: E[K]) {
-    const listeners = this.listeners[type];
+    const listeners = this.#listeners[type];
     if (listeners === undefined || listeners.length === 0) {
       return;
     }
