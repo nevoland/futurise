@@ -22,17 +22,9 @@ Emits events to a managed pool of listeners. Works conveniently with the `on` an
 
 [`EventEmitter`](EventEmitter.md)\<`E`\>
 
-## Properties
-
-### listeners
-
-> **listeners**: \{ \[K in string \| number \| symbol\]?: Listener\<E\[K\]\>\[\] \} = `{}`
-
-Listeners by event type.
-
 #### Defined in
 
-[classes/EventEmitter.ts:10](https://github.com/nevoland/futurise/blob/1cd28e2a6cbda8f2e58123bfcca390764dde0e9a/lib/classes/EventEmitter.ts#L10)
+[classes/EventEmitter.ts:14](https://github.com/nevoland/futurise/blob/19458131a2b9248ce77024f61a31e10e9447a5f7/lib/classes/EventEmitter.ts#L14)
 
 ## Methods
 
@@ -62,7 +54,7 @@ The listener to call with the event.
 
 #### Defined in
 
-[classes/EventEmitter.ts:20](https://github.com/nevoland/futurise/blob/1cd28e2a6cbda8f2e58123bfcca390764dde0e9a/lib/classes/EventEmitter.ts#L20)
+[classes/EventEmitter.ts:34](https://github.com/nevoland/futurise/blob/19458131a2b9248ce77024f61a31e10e9447a5f7/lib/classes/EventEmitter.ts#L34)
 
 ***
 
@@ -92,7 +84,35 @@ The event to dispatch.
 
 #### Defined in
 
-[classes/EventEmitter.ts:52](https://github.com/nevoland/futurise/blob/1cd28e2a6cbda8f2e58123bfcca390764dde0e9a/lib/classes/EventEmitter.ts#L52)
+[classes/EventEmitter.ts:66](https://github.com/nevoland/futurise/blob/19458131a2b9248ce77024f61a31e10e9447a5f7/lib/classes/EventEmitter.ts#L66)
+
+***
+
+### hasListeners()
+
+> **hasListeners**\<`K`\>(`type`): `boolean`
+
+Returns whether there are any listeners for a particular event type.
+
+#### Type Parameters
+
+• **K** *extends* `string` \| `number` \| `symbol`
+
+#### Parameters
+
+• **type**: `K`
+
+The event type to check for listeners.
+
+#### Returns
+
+`boolean`
+
+Whether there are any listeners for the event type.
+
+#### Defined in
+
+[classes/EventEmitter.ts:24](https://github.com/nevoland/futurise/blob/19458131a2b9248ce77024f61a31e10e9447a5f7/lib/classes/EventEmitter.ts#L24)
 
 ***
 
@@ -122,4 +142,4 @@ The listener to remove.
 
 #### Defined in
 
-[classes/EventEmitter.ts:34](https://github.com/nevoland/futurise/blob/1cd28e2a6cbda8f2e58123bfcca390764dde0e9a/lib/classes/EventEmitter.ts#L34)
+[classes/EventEmitter.ts:48](https://github.com/nevoland/futurise/blob/19458131a2b9248ce77024f61a31e10e9447a5f7/lib/classes/EventEmitter.ts#L48)
